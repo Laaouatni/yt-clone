@@ -1,5 +1,8 @@
 * {
     --nav-height: 3em;
+    --light-black: #202020;
+    --yt-black: #121212;
+    --yt-bg-black: #181818;
 }
 
 body {
@@ -9,11 +12,11 @@ body {
 
 nav {
     height: var(--nav-height);
-    background-color: blue;
+    background-color: var(--light-black);
     display: grid;
     place-content: center;
 }
 
-#nav-content img {
-    height: calc(var(--nav-height) - 1em);
+#nav-content svg {
+    height: calc(var(--nav-height) - 1em) !important;
 }
