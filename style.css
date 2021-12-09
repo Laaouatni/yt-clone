@@ -1,0 +1,19 @@
+* {
+    --nav-height: 3em;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    height: var(--nav-height);
+    background-color: blue;
+    display: grid;
+    place-content: center;
+}
+
+#nav-content img {
+    height: calc(var(--nav-height) - 1em);
+}
