@@ -3,6 +3,7 @@
     --light-black: #202020;
     --yt-black: #121212;
     --yt-bg-black: #181818;
+    --yt-grey: #323232;
 }
 
 body {
@@ -15,8 +16,16 @@ nav {
     background-color: var(--light-black);
     display: grid;
     place-content: center;
+    grid-auto-flow: column;
+    gap: 0.5em;
+    overflow: hidden;
 }
 
 #nav-content svg {
     height: calc(var(--nav-height) - 1em) !important;
+}
+
+#cerca-nav-yt {
+    border: 2px solid var(--yt-grey);
+    border-radius: 0.2em;
 }
