@@ -26,8 +26,7 @@ nav {
 nav,
 #nav-content,
 #yt-img-nav {
-    display: flex;
-    flex-direction: row;
+    display: grid;
     justify-content: center;
     align-items: center;
     /* ricorda che devi mettere justify content: in space-between */
@@ -51,11 +50,9 @@ nav,
     background-color: var(--yt-black);
     color: white;
     font-family: poppins, sans-serif;
-    display: flex;
-    flex-grow: 1;
+    width: 100%;
 }
 
 #cerca-container {
     display: grid;
-    place-content: center;
 }
