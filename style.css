@@ -6,6 +6,7 @@
     --yt-grey: #323232;
     --yt-height-nav-content: calc(var(--nav-height) - 1em);
     --nav-width: calc(100vw - 5em);
+    --bounce-animation: cubic-bezier(.23, .62, .35, 1.3);
 }
 
 html {
@@ -51,8 +52,17 @@ nav,
     color: white;
     font-family: poppins, sans-serif;
     width: 100%;
+    transition-duration: 0.3s;
+}
+
+#cerca-nav-yt:hover {
+    box-shadow: 0 0 2em var(--yt-grey);
+    transform: scaley(1.1);
+    transition-timing-function: var(--bounce-animation);
+    transition-property: 3s;
 }
 
 #cerca-container {
     display: grid;
+    grid-auto-flow: column;
 }
