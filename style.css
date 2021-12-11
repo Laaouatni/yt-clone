@@ -34,7 +34,7 @@ nav {
 #nav-content {
     width: var(--nav-width);
     gap: 1em;
-    grid-template-columns: auto 1fr auto;
+    grid-template-columns: auto auto 1fr auto;
     gap: 2em;
 }
 
@@ -96,6 +96,7 @@ nav {
     border-radius: 0 0.1em 0.1em 0;
 }
 
+#menu-icon,
 #cerca-container svg,
 #function-nav svg {
     fill: white;
@@ -113,7 +114,6 @@ nav {
 #nav-content div div,
 #nav-content svg {
     cursor: pointer;
-    outline: 3px red solid;
 }
 
 #cerca-btn svg {
@@ -147,6 +147,7 @@ nav {
     height: var(--yt-height-nav-content);
     aspect-ratio: 1;
     border-radius: 50%;
+    filter: drop-shadow(0 0 0.5em blue);
 }
 
 #profile-icon {
