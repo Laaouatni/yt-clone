@@ -26,9 +26,7 @@ nav {
     overflow: hidden;
 }
 
-nav,
-#nav-content,
-#yt-img-nav {
+.grid-centered {
     display: grid;
     place-content: center;
     /* ricorda che devi mettere justify content: in space-between (ma ora è grid) */
