@@ -28,8 +28,7 @@ nav {
 
 .grid-centered {
     display: grid;
-    place-content: center;
-    /* ricorda che devi mettere justify content: in space-between (ma ora è grid) */
+    place-items: center;
 }
 
 #nav-content {
@@ -136,4 +135,14 @@ nav {
 #function-nav {
     grid-auto-flow: column;
     gap: 1em;
+}
+
+#profile-icon img {
+    height: var(--yt-height-nav-content);
+    aspect-ratio: 1;
+    border-radius: 50%;
+}
+
+#profile-icon {
+    display: grid;
 }
