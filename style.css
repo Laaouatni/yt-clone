@@ -110,6 +110,11 @@ nav {
     filter: drop-shadow(0 0 0.5em white);
 }
 
+#nav-content div div,
+#nav-content svg {
+    cursor: pointer;
+}
+
 #cerca-btn svg {
     margin: 0 1em;
 }
