@@ -47,7 +47,7 @@ nav,
 
 #cerca-nav-yt {
     border: 1px solid var(--yt-grey);
-    border-radius: 0.1em;
+    border-radius: 0.1em 0 0 0.1em;
     height: calc(var(--yt-height-nav-content) + 0.5em);
     padding: 0 0.5em 0 0.8em;
     background-color: var(--yt-black);
@@ -61,7 +61,7 @@ nav,
     box-shadow: 0 0 2em var(--yt-grey);
     transition-timing-function: var(--bounce-animation);
     transition-duration: 0.5s;
-    border-radius: 0.4em;
+    border-radius: 0.4em 0 0 0.4em;
 }
 
 #cerca-nav-yt:focus {
@@ -73,7 +73,7 @@ nav,
 
 #cerca-container {
     display: grid;
-    grid-auto-flow: column;
+    grid-template-columns: 1fr auto auto;
 }
 
 #yt-img-nav {
@@ -90,4 +90,29 @@ nav,
     font-size: 0.5em;
     font-family: poppins, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto;
     text-shadow: 0 0 0.2em var(--yt-grey);
+}
+
+#cerca-buttone {
+    background-color: var(--yt-grey);
+    display: grid;
+    place-content: center;
+    border-radius: 0 0.1em 0.1em 0;
+}
+
+#cerca-buttone svg {
+    margin: 0 1em;
+    color: white;
+    opacity: 0.95;
+    transition-duration: 0.3s;
+    filter: drop-shadow(0 0.2em 0.1em var(--yt-black));
+}
+
+#cerca-buttone:hover>svg {
+    opacity: 1;
+    transition-duration: 0.5s;
+    filter: drop-shadow(0 0 0.5em white);
+}
+
+#cerca-buttone:active {
+    box-shadow: 0 0 1em var(--yt-grey);
 }
