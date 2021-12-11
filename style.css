@@ -97,8 +97,7 @@ nav {
     border-radius: 0 0.1em 0.1em 0;
 }
 
-#cerca-btn svg,
-#microfono-btn svg,
+#cerca-container svg,
 #function-nav svg {
     fill: white;
     opacity: 0.95;
@@ -107,7 +106,10 @@ nav {
 }
 
 #cerca-btn:hover>svg,
-#microfono-btn:hover>svg {
+#microfono-btn:hover>svg,
+#campanella-btn:hover>svg,
+#new-video-btn:hover>svg,
+#grid-icon-btn:hover>svg {
     opacity: 1;
     transition-duration: 0.5s;
     filter: drop-shadow(0 0 0.5em white);
@@ -129,4 +131,13 @@ nav {
     margin-left: 0.5em;
     width: 33.33px;
     height: 33.33px;
+}
+
+#microfono-btn:active {
+    filter: drop-shadow(0 0 0.5em var(--yt-bg-black));
+}
+
+#function-nav {
+    grid-auto-flow: column;
+    gap: 1em;
 }
