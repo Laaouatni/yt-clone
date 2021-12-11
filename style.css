@@ -7,6 +7,8 @@
     --yt-height-nav-content: calc(var(--nav-height) - 1em);
     --nav-width: calc(100vw - 5em);
     --bounce-animation: cubic-bezier(.23, .62, .35, 1.3);
+    --yt-dark-blue: #065fd4;
+    --yt-light-blue: #3ea6ff;
 }
 
 html {
@@ -45,7 +47,7 @@ nav,
 
 #cerca-nav-yt {
     border: 1px solid var(--yt-grey);
-    border-radius: 0.2em;
+    border-radius: 0.1em;
     height: calc(var(--yt-height-nav-content) + 0.5em);
     padding: 0 0.5em 0 0.8em;
     background-color: var(--yt-black);
@@ -56,14 +58,36 @@ nav,
 }
 
 #cerca-nav-yt:hover {
-    border: 2px solid var(--yt-grey);
     box-shadow: 0 0 2em var(--yt-grey);
     transition-timing-function: var(--bounce-animation);
-    transition-duration: 0.1s;
-    border-radius: 0.5em;
+    transition-duration: 0.5s;
+    border-radius: 0.4em;
+}
+
+#cerca-nav-yt:focus {
+    box-shadow: 0 0 5em var(--yt-dark-blue);
+    outline: none;
+    border: 1px solid var(--yt-dark-blue);
+    transition-duration: 0.5s;
 }
 
 #cerca-container {
     display: grid;
     grid-auto-flow: column;
+}
+
+#yt-img-nav {
+    position: relative;
+}
+
+#yt-img-nav:after {
+    content: "IT";
+    position: absolute;
+    opacity: 0.5;
+    top: -0.5em;
+    right: -1em;
+    color: white;
+    font-size: 0.5em;
+    font-family: poppins, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto;
+    text-shadow: 0 0 0.2em var(--yt-grey);
 }
