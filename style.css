@@ -30,15 +30,15 @@ nav,
 #nav-content,
 #yt-img-nav {
     display: grid;
-    justify-content: center;
-    align-items: center;
-    /* ricorda che devi mettere justify content: in space-between */
+    place-content: center;
+    /* ricorda che devi mettere justify content: in space-between (ma ora è grid) */
 }
 
 #nav-content {
     width: var(--nav-width);
     gap: 1em;
-    grid-template-columns: auto 1fr;
+    grid-template-columns: auto 1fr auto;
+    gap: 2em;
 }
 
 #nav-content svg {
@@ -92,27 +92,43 @@ nav,
     text-shadow: 0 0 0.2em var(--yt-grey);
 }
 
-#cerca-buttone {
+#cerca-btn {
     background-color: var(--yt-grey);
     display: grid;
     place-content: center;
     border-radius: 0 0.1em 0.1em 0;
 }
 
-#cerca-buttone svg {
-    margin: 0 1em;
+#cerca-btn svg,
+#microfono-btn svg {
     color: white;
     opacity: 0.95;
     transition-duration: 0.3s;
     filter: drop-shadow(0 0.2em 0.1em var(--yt-black));
+    transform: scale(0.8);
 }
 
-#cerca-buttone:hover>svg {
+#cerca-btn:hover>svg,
+#microfono-btn:hover>svg {
     opacity: 1;
     transition-duration: 0.5s;
     filter: drop-shadow(0 0 0.5em white);
 }
 
-#cerca-buttone:active {
+#cerca-btn svg {
+    margin: 0 1em;
+}
+
+#cerca-btn:active {
     box-shadow: 0 0 1em var(--yt-grey);
+}
+
+#microfono-btn {
+    background-color: var(--yt-bg-black);
+    display: grid;
+    place-content: center;
+    border-radius: 50%;
+    margin-left: 0.5em;
+    width: 33.33px;
+    height: 33.33px;
 }
