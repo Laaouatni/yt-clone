@@ -105,11 +105,7 @@ nav {
     filter: drop-shadow(0 0.2em 0.1em var(--yt-black));
 }
 
-#cerca-btn:hover>svg,
-#microfono-btn:hover>svg,
-#campanella-btn:hover>svg,
-#new-video-btn:hover>svg,
-#grid-icon-btn:hover>svg {
+#nav-content>div>div:hover svg {
     opacity: 1;
     transition-duration: 0.5s;
     filter: drop-shadow(0 0 0.5em white);
