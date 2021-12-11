@@ -113,6 +113,7 @@ nav {
 #nav-content div div,
 #nav-content svg {
     cursor: pointer;
+    outline: 3px red solid;
 }
 
 #cerca-btn svg {
