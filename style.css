@@ -110,7 +110,6 @@ nav {
     opacity: 1;
     transition-duration: 0.5s;
     filter: drop-shadow(0 0 0.5em white);
-    transform: scale(1.2);
 }
 
 #nav-content div div,
@@ -166,4 +165,8 @@ nav {
     display: grid;
     grid-auto-flow: column;
     gap: 1em;
+}
+
+@media (max-width: 768px) {
+    #cerca-btn {}
 }
