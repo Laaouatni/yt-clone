@@ -110,7 +110,7 @@ nav {
     opacity: 1;
     transition-duration: 0.5s;
     filter: drop-shadow(0 0 0.5em white);
-    transform: rotatez(360deg);
+    transform: scale(1.2);
 }
 
 #nav-content div div,
