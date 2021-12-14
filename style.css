@@ -23,9 +23,14 @@ body {
 }
 
 nav {
+    width: 100vw;
+}
+
+#top-nav {
     height: var(--nav-height);
     background-color: var(--light-black);
     overflow: hidden;
+    width: 100%;
 }
 
 .grid-centered {
