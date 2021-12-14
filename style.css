@@ -10,6 +10,7 @@
     --bounce-animation: cubic-bezier(.23, .62, .35, 1.3);
     --yt-dark-blue: #065fd4;
     --yt-light-blue: #3ea6ff;
+    --button-height: 33.33px;
 }
 
 html {
@@ -132,8 +133,8 @@ nav {
     place-content: center;
     border-radius: 50%;
     margin-left: 0.5em;
-    width: 33.33px;
-    height: 33.33px;
+    width: var(--button-height);
+    height: var(--button-height);
 }
 
 #microfono-btn:active {
@@ -168,6 +169,37 @@ nav {
     gap: 1em;
 }
 
-@media (max-width: 768px) {
-    #cerca-btn {}
+@media (max-width: 650px) {
+    #cerca-div {
+        display: none !important;
+    }
+    #cerca-btn {
+        border-radius: var(--button-height);
+        transition-duration: 0.5s;
+    }
+}
+
+@media (max-width: 500px) {
+    #microfono-btn {
+        display: none !important;
+    }
+    #cerca-btn {
+        height: var(--button-height);
+    }
+    #nav-content {
+        gap: 1em;
+        transition-duration: 0.5s;
+    }
+}
+
+@media (max-width:400px) {
+    #function-nav>*:not(#profile-icon) {
+        display: none;
+    }
+}
+
+@media (max-width: 300px) {
+    #menu-icon {
+        display: none !important;
+    }
 }
