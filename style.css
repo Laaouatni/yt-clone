@@ -4,6 +4,7 @@
     --yt-black: #121212;
     --yt-bg-black: #181818;
     --yt-grey: #323232;
+    --yt-light-grey: #373737;
     --yt-height-nav-content: calc(var(--nav-height) - 1em);
     --nav-width: calc(100vw - 2em);
     /*ricordati che prima era a 5em */
@@ -11,6 +12,7 @@
     --yt-dark-blue: #065fd4;
     --yt-light-blue: #3ea6ff;
     --button-height: 33.33px;
+    --glassmophic-white: rgba(255, 255, 255, 0.1);
 }
 
 html {
@@ -24,6 +26,8 @@ body {
 
 nav {
     width: 100vw;
+    display: grid;
+    grid-auto-flow: row;
 }
 
 #top-nav {
@@ -172,6 +176,26 @@ nav {
     display: grid;
     grid-auto-flow: column;
     gap: 1em;
+}
+
+#nav-categorie {
+    border-top: 1px solid var(--yt-grey);
+    height: calc(var(--nav-height) - 0.5em);
+    background-color: var(--light-black);
+    overflow: hidden;
+    width: 100%;
+    color: white;
+    gap: 1em;
+    padding-left: 1em;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+#nav-categorie div {
+    height: 32px;
+    border-radius: 1em;
+    border: 1px solid var(--glassmophic-white);
+    font-size: 0.8em;
 }
 
 @media (max-width: 650px) {
