@@ -186,14 +186,19 @@ nav {
     width: 100%;
     color: white;
     gap: 1em;
+    display: flex;
+    align-items: center;
     padding-left: 1em;
     overflow-y: scroll;
     overflow-x: hidden;
 }
 
 #nav-categorie div {
-    height: 32px;
+    display: grid;
+    place-items: center;
+    padding: 0.2em 0.6em;
     border-radius: 1em;
+    background-color: var(--yt-light-grey);
     border: 1px solid var(--glassmophic-white);
     font-size: 0.8em;
 }
