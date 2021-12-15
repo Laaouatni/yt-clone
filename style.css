@@ -209,6 +209,12 @@ nav {
     white-space: nowrap;
 }
 
+.clickedCategory {
+    background: white !important;
+    color: black;
+    transition-duration: 0.3s;
+}
+
 #nav-categorie div:hover {
     opacity: 1;
     filter: brightness(1.4);
