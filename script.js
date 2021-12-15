@@ -1,7 +1,7 @@
 let categoryContainer = document.querySelector("#nav-categorie");
 let input = document.querySelector("#cerca-nav-yt");
 let button = document.querySelector("#cerca-btn");
-let categoryDiv = document.querySelectorAll(".category-div");
+let categoryDiv = document.querySelector(".category-div");
 
 console.log(categoryDiv);
 
@@ -16,18 +16,16 @@ button.addEventListener("click", function() {
     if (input.value != "") {
         createCategory(input.value);
         input.value = "";
-        for (let i = 0; i < categoryDiv.length; i++) {
-            categoryDiv[i].addEventListener("click", function() {
-                this.classList.toggle("clickedCategory");
-            });
-        }
     } else {
         createCategory("prova a inserire qualcosa nella ricerca :)");
         input.value = "";
     }
 });
-for (let i = 0; i < categoryDiv.length; i++) {
-    categoryDiv[i].addEventListener("click", function() {
-        this.classList.toggle("clickedCategory");
-    });
+
+function getNavHeight() {
+    let navHeight = document.querySelector("nav").offsetHeight;
+    console.log(navHeight);
+    document.documentElement.style.setProperty("--navAllHeight", navHeight + "px");
 }
+
+getNavHeight();

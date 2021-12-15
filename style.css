@@ -221,6 +221,11 @@ nav {
     transition-duration: 0.1s;
 }
 
+main {
+    background-color: var(--yt-bg-black);
+    height: calc(100vh - var(--navAllHeight));
+}
+
 @media (max-width: 650px) {
     #cerca-div {
         display: none !important;
