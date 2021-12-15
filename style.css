@@ -22,6 +22,7 @@ html {
 body {
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
 }
 
 nav {
@@ -188,19 +189,30 @@ nav {
     gap: 1em;
     display: flex;
     align-items: center;
-    padding-left: 1em;
-    overflow-y: scroll;
-    overflow-x: hidden;
+    padding-left: 1em !important;
+    overflow-x: auto;
+}
+
+#nav-categorie::-webkit-scrollbar {
+    display: none;
 }
 
 #nav-categorie div {
     display: grid;
     place-items: center;
-    padding: 0.2em 0.6em;
+    padding: 0.15em 0.6em;
     border-radius: 1em;
     background-color: var(--yt-light-grey);
     border: 1px solid var(--glassmophic-white);
     font-size: 0.8em;
+    opacity: 0.95;
+    white-space: nowrap;
+}
+
+#nav-categorie div:hover {
+    opacity: 1;
+    filter: brightness(1.4);
+    transition-duration: 0.1s;
 }
 
 @media (max-width: 650px) {
