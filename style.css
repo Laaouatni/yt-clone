@@ -181,12 +181,13 @@ nav {
 
 #nav-categorie {
     border-top: 1px solid var(--yt-grey);
+    border-bottom: 1px solid var(--yt-grey);
     height: calc(var(--nav-height) - 0.5em);
     background-color: var(--light-black);
     overflow: hidden;
     width: 100%;
     color: white;
-    gap: 1em;
+    gap: 0.5em;
     display: flex;
     align-items: center;
     padding-left: 1em !important;
@@ -224,6 +225,45 @@ nav {
 main {
     background-color: var(--yt-bg-black);
     height: calc(100vh - var(--navAllHeight));
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.video-container {
+    outline: 2px solid red;
+}
+
+.video-thumbnail {
+    width: 100%;
+    aspect-ratio: 16/9;
+    background-color: var(--yt-light-grey);
+    outline: 2px solid red;
+}
+
+.video-creator-logo>img {
+    height: 2em;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    margin: 0.5em 1em;
+}
+
+.grid-video-details {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-gap: 0.5em;
+    color: white;
+    padding: 0.5em;
+    outline: 2px solid red;
+}
+
+.video-title {
+    font-weight: bolder;
+    font-size: 1em;
+}
+
+.video-info {
+    font-size: 0.7em;
+    opacity: 0.7;
 }
 
 @media (max-width: 650px) {
