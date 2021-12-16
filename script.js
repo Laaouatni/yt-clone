@@ -39,6 +39,6 @@ function createVideo( /* titolo, nomeCanale, numeroViews */ ) {
     videoComponent.querySelector(".video-views").textContent = numeroViews; */
     mainContainer.appendChild(videoComponent);
 }
-/* for (let index = 0; index < 20; index++) {
+for (let index = 0; index < 20; index++) {
     createVideo();
-} */
+}
