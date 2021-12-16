@@ -31,11 +31,14 @@ function getNavHeight() {
 getNavHeight();
 
 
-function createVideo(titolo, nomeCanale, numeroViews) {
+function createVideo( /* titolo, nomeCanale, numeroViews */ ) {
     // copia il codice html
     let videoComponent = videoContainer.cloneNode(true);
-    videoComponent.querySelector(".video-title").textContent = titolo;
+    /* videoComponent.querySelector(".video-title").textContent = titolo;
     videoComponent.querySelector(".video-name-channel").textContent = nomeCanale;
-    videoComponent.querySelector(".video-views").textContent = numeroViews;
-    videoContainer.appendChild(videoComponent);
+    videoComponent.querySelector(".video-views").textContent = numeroViews; */
+    mainContainer.appendChild(videoComponent);
 }
+/* for (let index = 0; index < 20; index++) {
+    createVideo();
+} */

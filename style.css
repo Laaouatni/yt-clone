@@ -224,14 +224,16 @@ nav {
 
 main {
     background-color: var(--yt-bg-black);
-    height: calc(100vh - var(--navAllHeight));
+    min-height: calc(100vh - var(--navAllHeight));
+    height: 100%;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    gap: 1em;
+    padding: 1em;
 }
 
 .video-container {
     height: fit-content;
-    margin: 1em;
 }
 
 .video-thumbnail {
