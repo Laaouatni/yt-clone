@@ -230,14 +230,14 @@ main {
 }
 
 .video-container {
-    outline: 2px solid red;
+    height: fit-content;
+    margin: 1em;
 }
 
 .video-thumbnail {
     width: 100%;
     aspect-ratio: 16/9;
     background-color: var(--yt-light-grey);
-    outline: 2px solid red;
 }
 
 .video-creator-logo>img {
@@ -253,7 +253,6 @@ main {
     grid-gap: 0.5em;
     color: white;
     padding: 0.5em;
-    outline: 2px solid red;
 }
 
 .video-title {

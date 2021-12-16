@@ -2,8 +2,8 @@ let categoryContainer = document.querySelector("#nav-categorie");
 let input = document.querySelector("#cerca-nav-yt");
 let button = document.querySelector("#cerca-btn");
 let categoryDiv = document.querySelector(".category-div");
-
-console.log(categoryDiv);
+let videoContainer = document.querySelector(".video-container");
+let mainContainer = document.querySelector("main");
 
 function createCategory(category) {
     let newDiv = document.createElement("div");
@@ -29,3 +29,13 @@ function getNavHeight() {
 }
 
 getNavHeight();
+
+
+function createVideo(titolo, nomeCanale, numeroViews) {
+    // copia il codice html
+    let videoComponent = videoContainer.cloneNode(true);
+    videoComponent.querySelector(".video-title").textContent = titolo;
+    videoComponent.querySelector(".video-name-channel").textContent = nomeCanale;
+    videoComponent.querySelector(".video-views").textContent = numeroViews;
+    videoContainer.appendChild(videoComponent);
+}
