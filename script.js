@@ -48,6 +48,7 @@ function createVideo( /* titolo, nomeCanale, numeroViews */ ) {
     } else {
         videoComponent.querySelector(".video-views").classList.remove("trending-video");
     }
+    randomColor();
     mainContainer.appendChild(videoComponent);
 }
 for (let index = 0; index < 20; index++) {
@@ -61,3 +62,11 @@ window.addEventListener("scroll", function() {
         createVideo();
     } else if (scrollPercentage > 70 && scrollPercentage < 90) {}
 });
+
+
+function randomColor() {
+    let r = Math.floor(Math.random() * 256);
+    let g = Math.floor(Math.random() * 256);
+    let b = Math.floor(Math.random() * 256);
+    document.querySelector(".video-thumbnail").style.background = "rgb(" + r + ", " + g + ", " + b + ")";
+}

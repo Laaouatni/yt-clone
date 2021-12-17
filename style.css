@@ -255,6 +255,14 @@ main {
     aspect-ratio: 16/9;
     background-color: var(--yt-light-grey);
     border-radius: 0.5em;
+    display: grid;
+    place-items: center;
+}
+
+.video-thumbnail>* {
+    height: 30%;
+    opacity: 1;
+    filter: drop-shadow(0 1em 2em var(--yt-black));
 }
 
 .video-creator-logo {
