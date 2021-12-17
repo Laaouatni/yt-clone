@@ -234,12 +234,18 @@ main {
 
 .video-container {
     height: fit-content;
+    animation: videoIn 1s ease-in-out;
+    background-color: rgba(255, 255, 255, 0.007);
+    border-radius: 0.5em;
 }
 
-@keyframe videoIn {
-    from {}
+@keyframes videoIn {
+    from {
+        opacity: 0;
+        transform: translateY(10em);
+    }
     to {
-        transform: translateY(0);
+        transform: rotate(0) translateY(0);
     }
 }
 
@@ -247,13 +253,19 @@ main {
     width: 100%;
     aspect-ratio: 16/9;
     background-color: var(--yt-light-grey);
+    border-radius: 0.5em;
+}
+
+.video-creator-logo {
+    display: grid;
+    place-self: center;
 }
 
 .video-creator-logo>img {
     height: 2em;
     aspect-ratio: 1;
     border-radius: 50%;
-    margin: 0.5em 1em;
+    margin: 0 0.5em;
 }
 
 .grid-video-details {
@@ -274,9 +286,22 @@ main {
     opacity: 0.7;
 }
 
+.video-views {
+    font-weight: 300;
+    opacity: 0.7;
+}
+
+.trending-video {}
+
 @media (max-width: 1100px) {
     main {
         grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 850px) {
+    main {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 

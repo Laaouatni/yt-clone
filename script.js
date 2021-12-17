@@ -42,7 +42,13 @@ function createVideo( /* titolo, nomeCanale, numeroViews */ ) {
     videoComponent.querySelector(".video-title").textContent = "titolo Video " + numeroVideo;
     videoComponent.querySelector(".video-name-channel").textContent = "Canale Youtube " + numeroVideo;
     videoComponent.querySelector(".video-views").textContent = randomNumber + " visualizzazioni";
-
+    if (randomNumber > 400) {
+        videoComponent.querySelector(".video-views").style.color = "#00ff6c";
+        videoComponent.querySelector(".video-views").style.opacity = "1";
+        document.querySelector("style").innerHTML = ".video-views:after, .video-views:before {content: ' 🔥 '}";
+    } else {
+        document.querySelector("style").innerHTML = null;
+    }
     mainContainer.appendChild(videoComponent);
 }
 for (let index = 0; index < 20; index++) {
