@@ -13,6 +13,7 @@
     --yt-light-blue: #3ea6ff;
     --button-height: 33.33px;
     --glassmophic-white: rgba(255, 255, 255, 0.1);
+    --light-green: #00ff6c;
 }
 
 html {
@@ -291,7 +292,11 @@ main {
     opacity: 0.7;
 }
 
-.trending-video {}
+.trending-video {
+    color: var(--light-green);
+    opacity: 1 !important;
+    text-shadow: 0 0 2em var(--light-green);
+}
 
 @media (max-width: 1100px) {
     main {
