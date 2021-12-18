@@ -289,9 +289,14 @@ main :first-child .video-thumbnail>svg {
 }
 
 .video-thumbnail:hover>svg {
-    filter: blur(0.2em);
+    transform: scale(1.5);
     transition-timing-function: var(--bounce-animation);
     transition-duration: 1s;
+}
+
+.video-thumbnail>svg {
+    transition-timing-function: var(--bounce-animation);
+    transition-duration: 0.5s;
 }
 
 .video-thumbnail:hover::before {
