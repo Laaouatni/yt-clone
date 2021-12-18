@@ -258,6 +258,14 @@ main :first-child .grid-video-details div .video-info>.video-views::first-letter
     font-weight: bolder;
 }
 
+main :first-child .video-thumbnail {
+    background: linear-gradient(145deg, rgb(255, 255, 255), rgb(32, 92, 255))!important;
+}
+
+main :first-child .video-thumbnail>svg {
+    filter: drop-shadow(0 1em 2em white);
+}
+
 @keyframes videoIn {
     from {
         opacity: 0;
@@ -287,7 +295,7 @@ main :first-child .grid-video-details div .video-info>.video-views::first-letter
 }
 
 .video-thumbnail:hover::before {
-    content: "0:50";
+    content: "5:00";
     display: grid;
     place-content: center;
     position: absolute;

@@ -61,7 +61,7 @@ function createVideo( /* titolo, nomeCanale, numeroViews */ ) {
 
 window.addEventListener("scroll", function() {
     let scrollPercentage = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
-    if (scrollPercentage > 90) {
+    if (scrollPercentage > 85) {
         createVideo();
     }
 });
