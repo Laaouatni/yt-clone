@@ -12,8 +12,6 @@ let videoContainerHeight = videoContainer.offsetHeight;
 let mainContainerHeight = mainContainer.scrollHeight;
 let mainContainerWidth = mainContainer.offsetWidth;
 
-let bodyWidth = document.querySelector("body").offsetWidth;
-
 let numeroVideo = 0;
 let videoContainerHeightNumTotalNeeded = Math.round(mainContainerHeight / videoContainerHeight) - 1;
 
@@ -63,10 +61,9 @@ function createVideo( /* titolo, nomeCanale, numeroViews */ ) {
 
 window.addEventListener("scroll", function() {
     let scrollPercentage = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
-    if (scrollPercentage > 95) {
+    if (scrollPercentage > 90) {
         createVideo();
     }
-    isEnoughtVideoComp();
 });
 
 
@@ -78,16 +75,32 @@ function randomColor() {
 }
 
 function isEnoughtVideoComp() {
+    let bodyWidth = document.querySelector("body").offsetWidth;
     if (bodyWidth > 1100) {
-        console.log("4 video");
+        for (let index = 0; index < 4; index++) {
+            createVideoDependOnHeight();
+        }
     } else if (bodyWidth < 1100 && bodyWidth > 850) {
-        console.log("3 video");
+        for (let index = 0; index < 3; index++) {
+            createVideoDependOnHeight();
+        }
     } else if (bodyWidth < 850 && bodyWidth > 550) {
-        console.log("2 video");
+        for (let index = 0; index < 2; index++) {
+            createVideoDependOnHeight();
+        }
     } else if (bodyWidth < 550) {
-        console.log("1 video");
+        createVideoDependOnHeight();
     }
     console.log("MAIN: " + mainContainerHeight + "\nVIDEO: " + videoContainerHeight + "\nDIVISO: " + videoContainerHeightNumTotalNeeded);
 }
 
 getNavHeight();
+
+isEnoughtVideoComp();
+
+
+function createVideoDependOnHeight() {
+    for (let index = 0; index < videoContainerHeightNumTotalNeeded + 1; index++) {
+        createVideo();
+    }
+}
