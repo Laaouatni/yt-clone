@@ -235,6 +235,7 @@ main {
     grid-template-columns: repeat(4, 1fr);
     gap: 1em;
     padding: 1em;
+    transition-duration: 0.5s;
 }
 
 .video-container {

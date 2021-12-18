@@ -52,7 +52,7 @@ function createVideo( /* titolo, nomeCanale, numeroViews */ ) {
 
 window.addEventListener("scroll", function() {
     let scrollPercentage = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
-    if (scrollPercentage > 90) {
+    if (scrollPercentage > 95) {
         createVideo();
     }
 });
@@ -65,14 +65,13 @@ function randomColor() {
     document.querySelector(".video-thumbnail").style.background = "rgb(" + r + ", " + g + ", " + b + ")";
 }
 
-
-function isEnoughtVideo() {
+function isEnoughtVideoComp() {
     let videoContainerHeight = document.querySelector(".video-container").offsetHeight;
-    let mainContainerHeight = document.querySelector("main").offsetHeight;
-    let videoContainerHeightPercentage = videoContainerHeight / mainContainerHeight;
-    console.log({ videoContainerHeightPercentage });
+    let mainContainerHeight = document.querySelector("main").scrollHeight;
+    /* let videoContainerHeightPercentage = mainContainerHeight / videoContainerHeight; */
+    console.log("MAIN: " + mainContainerHeight + "\n VIDEO: " + videoContainerHeight);
 }
 
-isEnoughtVideo()
+isEnoughtVideoComp();
 
 getNavHeight();
