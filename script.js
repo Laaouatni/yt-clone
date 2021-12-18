@@ -25,12 +25,8 @@ button.addEventListener("click", function() {
 
 function getNavHeight() {
     let navHeight = document.querySelector("nav").offsetHeight;
-    console.log(navHeight);
     document.documentElement.style.setProperty("--navAllHeight", navHeight + "px");
 }
-
-getNavHeight();
-
 
 function createVideo( /* titolo, nomeCanale, numeroViews */ ) {
     // copia il codice html
@@ -42,25 +38,23 @@ function createVideo( /* titolo, nomeCanale, numeroViews */ ) {
     videoComponent.querySelector(".video-title").textContent = "titolo Video " + numeroVideo;
     videoComponent.querySelector(".video-name-channel").textContent = "Canale Youtube " + numeroVideo;
     videoComponent.querySelector(".video-views").textContent = randomNumber + " visualizzazioni";
+
     if (randomNumber > 900) {
         videoComponent.querySelector(".video-views").classList.add("trending-video");
         document.querySelector("style").innerHTML = ".trending-video:after, .trending-video:before {content: ' 🔥 '; text-shadow: 0 0 1em red;}";
     } else {
         videoComponent.querySelector(".video-views").classList.remove("trending-video");
     }
+
     randomColor();
     mainContainer.appendChild(videoComponent);
-}
-for (let index = 0; index < 20; index++) {
-    createVideo();
 }
 
 window.addEventListener("scroll", function() {
     let scrollPercentage = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
-    console.log(scrollPercentage);
     if (scrollPercentage > 90) {
         createVideo();
-    } else if (scrollPercentage > 70 && scrollPercentage < 90) {}
+    }
 });
 
 
@@ -70,3 +64,15 @@ function randomColor() {
     let b = Math.floor(Math.random() * 256);
     document.querySelector(".video-thumbnail").style.background = "rgb(" + r + ", " + g + ", " + b + ")";
 }
+
+
+function isEnoughtVideo() {
+    let videoContainerHeight = document.querySelector(".video-container").offsetHeight;
+    let mainContainerHeight = document.querySelector("main").offsetHeight;
+    let videoContainerHeightPercentage = videoContainerHeight / mainContainerHeight;
+    console.log({ videoContainerHeightPercentage });
+}
+
+isEnoughtVideo()
+
+getNavHeight();

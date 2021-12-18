@@ -6,14 +6,16 @@
     --yt-grey: #323232;
     --yt-light-grey: #373737;
     --yt-height-nav-content: calc(var(--nav-height) - 1em);
-    --nav-width: calc(100vw - 2em);
-    /*ricordati che prima era a 5em */
+    --nav-width: calc(100vw - var(--lateral-nav-width));
+    /*ricordati che prima era a 5em (molto prima) e 2em (prima)*/
     --bounce-animation: cubic-bezier(.23, .62, .35, 1.3);
     --yt-dark-blue: #065fd4;
     --yt-light-blue: #3ea6ff;
     --button-height: 33.33px;
     --glassmophic-white: rgba(255, 255, 255, 0.1);
     --light-green: #00ff6c;
+    --lateral-nav-width: 5em;
+    --yt-light-red: #FF0026;
 }
 
 html {
@@ -37,6 +39,8 @@ nav {
     background-color: var(--light-black);
     overflow: hidden;
     width: 100%;
+    place-content: center/* end */
+    ;
 }
 
 .grid-centered {
@@ -240,10 +244,14 @@ main {
     border-radius: 0.5em;
 }
 
+main :first-child .grid-video-details div .video-info>.video-views::first-letter {
+    font-weight: bolder;
+}
+
 @keyframes videoIn {
     from {
         opacity: 0;
-        transform: translateY(10em);
+        transform: translateY(100%);
     }
     to {
         transform: rotate(0) translateY(0);
@@ -306,6 +314,18 @@ main {
     text-shadow: 0 0 2em var(--light-green);
 }
 
+.loading {
+    z-index: 10;
+    width: 100vw;
+    height: 0.1em;
+    background-color: var(--yt-light-red);
+    position: fixed;
+    top: 0;
+    left: 0%;
+    transition-duration: 0;
+    box-shadow: 0 0 0.5em var(--yt-light-red);
+}
+
 @media (max-width: 1100px) {
     main {
         grid-template-columns: repeat(3, 1fr);
@@ -325,6 +345,12 @@ main {
     #cerca-btn {
         border-radius: var(--button-height);
         transition-duration: 0.5s;
+    }
+}
+
+@media (max-width: 550px) {
+    main {
+        grid-template-columns: 1fr;
     }
 }
 
