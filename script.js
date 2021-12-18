@@ -58,8 +58,8 @@ function createVideo() {
 
     if (randomSecond < 10) {
         randomTime = randomMin + ":" + "0" + randomSecond;
-    } else if (randomSecond > 60) {
-        randomTime = "ERROR";
+    } else if (randomSecond >= 60) {
+        randomTime = randomMin + ":" + "59";
     } else { randomTime = randomMin + ":" + randomSecond; }
 
     videoComponent.querySelector(".video-title").textContent = "titolo Video " + numeroVideo;
