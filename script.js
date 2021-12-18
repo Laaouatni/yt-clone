@@ -14,6 +14,7 @@ let mainContainerWidth = mainContainer.offsetWidth;
 
 let numeroVideo = 0;
 let videoContainerHeightNumTotalNeeded = Math.round(mainContainerHeight / videoContainerHeight);
+let trendingStyleCSS = ".trending-video:after, .trending-video:before {content: ' 🔥 '; text-shadow: 0 0 1em red;}";
 
 function createCategory(category) {
     let newDiv = document.createElement("div");
@@ -44,17 +45,30 @@ function createVideo() {
     let randomNumber = Math.floor(Math.random() * 1000);
     numeroVideo += 1;
 
-    videoComponent.querySelector(".video-title").textContent = "titolo Video " + numeroVideo;
-    videoComponent.querySelector(".video-name-channel").textContent = "Canale Youtube " + numeroVideo;
-    videoComponent.querySelector(".video-views").textContent = randomNumber + " visualizzazioni";
+    let randomMin = Math.round(Math.random() * 10);
+    let randomSecond = Math.round(Math.random() * 60);
+    let randomTime = "";
 
     if (randomNumber > 900) {
         videoComponent.querySelector(".video-views").classList.add("trending-video");
-        document.querySelector("style").innerHTML = ".trending-video:after, .trending-video:before {content: ' 🔥 '; text-shadow: 0 0 1em red;}";
+        document.querySelector("style").innerHTML = trendingStyleCSS;
     } else {
         videoComponent.querySelector(".video-views").classList.remove("trending-video");
     }
 
+    if (randomSecond < 10) {
+        randomTime = randomMin + ":" + "0" + randomSecond;
+    } else if (randomSecond > 60) {
+        randomTime = "ERROR";
+    } else { randomTime = randomMin + ":" + randomSecond; }
+
+    videoComponent.querySelector(".video-title").textContent = "titolo Video " + numeroVideo;
+    videoComponent.querySelector(".video-name-channel").textContent = "Canale Youtube " + numeroVideo;
+    videoComponent.querySelector(".video-views").textContent = randomNumber + " visualizzazioni";
+
+
+
+    document.querySelector("style").innerHTML += ".video-thumbnail:hover::before { content: '" + randomTime + "';}";
     randomColor();
     mainContainer.appendChild(videoComponent);
 }
@@ -104,14 +118,3 @@ function createVideoDependOnHeight() {
 getNavHeight();
 
 isEnoughtVideoComp();
-
-
-function randomMinutes() {
-    let randomMin = Math.round(Math.random() * 10);
-    let randomSecond = Math.round(Math.random() * 60);
-
-    if (randomSecond < 10) {
-        return randomMin + ":" + "0" + randomSecond;
-    }
-    return randomMin + ":" + randomSecond;
-}
