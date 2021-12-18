@@ -113,6 +113,23 @@ nav {
     border-radius: 0 0.1em 0.1em 0;
 }
 
+#cerca-btn:active>.loading {
+    left: 0 !important;
+    transition-duration: 0.2s;
+}
+
+@keyframes loading {
+    from {
+        left: 120%;
+    }
+    70% {
+        left: 0;
+    }
+    to {
+        left: 120%;
+    }
+}
+
 #menu-icon,
 #cerca-container svg,
 #function-nav svg {
@@ -289,7 +306,7 @@ main :first-child .video-thumbnail>svg {
 }
 
 .video-thumbnail:hover>svg {
-    transform: scale(1.5);
+    transform: scale(1.5) rotate(-360deg);
     transition-timing-function: var(--bounce-animation);
     transition-duration: 1s;
 }
@@ -313,6 +330,8 @@ main :first-child .video-thumbnail>svg {
     color: white;
     transition-timing-function: var(--bounce-animation);
     transition-duration: 1s;
+    opacity: 0.8;
+    box-shadow: 0 0 0.1em 0.1em var(--yt-black);
 }
 
 .video-thumbnail>* {
@@ -365,13 +384,14 @@ main :first-child .video-thumbnail>svg {
 .loading {
     z-index: 10;
     width: 100vw;
-    height: 0.1em;
+    height: 0.2em;
     background-color: var(--yt-light-red);
     position: fixed;
     top: 0;
-    left: 0%;
+    left: 120%;
     transition-duration: 0;
     box-shadow: 0 0 0.5em var(--yt-light-red);
+    transition-duration: 1s;
 }
 
 @media (min-width: 1800px) {

@@ -1,5 +1,5 @@
-let input = document.querySelector("#cerca-nav-yt");
-let button = document.querySelector("#cerca-btn");
+let CercaInput = document.querySelector("#cerca-nav-yt");
+let CercaBtn = document.querySelector("#cerca-btn");
 
 let categoryContainer = document.querySelector("#nav-categorie");
 let categoryDiv = document.querySelector(".category-div");
@@ -22,13 +22,13 @@ function createCategory(category) {
     newDiv.classList.add("category-div");
 }
 
-button.addEventListener("click", function() {
-    if (input.value != "") {
-        createCategory(input.value);
-        input.value = "";
+CercaBtn.addEventListener("click", function() {
+    if (CercaInput.value != "") {
+        createCategory(CercaInput.value);
+        CercaInput.value = "";
     } else {
         createCategory("prova a inserire qualcosa nella ricerca :)");
-        input.value = "";
+        CercaInput.value = "";
     }
 });
 
@@ -37,7 +37,7 @@ function getNavHeight() {
     document.documentElement.style.setProperty("--navAllHeight", navHeight + "px");
 }
 
-function createVideo( /* titolo, nomeCanale, numeroViews */ ) {
+function createVideo() {
     // copia il codice html
     let videoComponent = videoContainer.cloneNode(true);
 
@@ -104,3 +104,14 @@ function createVideoDependOnHeight() {
 getNavHeight();
 
 isEnoughtVideoComp();
+
+
+function randomMinutes() {
+    let randomMin = Math.round(Math.random() * 10);
+    let randomSecond = Math.round(Math.random() * 60);
+
+    if (randomSecond < 10) {
+        return randomMin + ":" + "0" + randomSecond;
+    }
+    return randomMin + ":" + randomSecond;
+}
