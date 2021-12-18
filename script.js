@@ -13,7 +13,7 @@ let mainContainerHeight = mainContainer.scrollHeight;
 let mainContainerWidth = mainContainer.offsetWidth;
 
 let numeroVideo = 0;
-let videoContainerHeightNumTotalNeeded = Math.round(mainContainerHeight / videoContainerHeight) - 1;
+let videoContainerHeightNumTotalNeeded = Math.round(mainContainerHeight / videoContainerHeight);
 
 function createCategory(category) {
     let newDiv = document.createElement("div");
@@ -95,7 +95,7 @@ function isEnoughtVideoComp() {
 }
 
 function createVideoDependOnHeight() {
-    for (let index = 0; index < videoContainerHeightNumTotalNeeded + 3; index++) {
+    for (let index = 0; index < videoContainerHeightNumTotalNeeded; index++) {
         createVideo();
         console.log(videoContainerHeightNumTotalNeeded);
     }
