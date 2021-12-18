@@ -94,13 +94,13 @@ function isEnoughtVideoComp() {
     console.log("MAIN: " + mainContainerHeight + "\nVIDEO: " + videoContainerHeight + "\nDIVISO: " + videoContainerHeightNumTotalNeeded);
 }
 
+function createVideoDependOnHeight() {
+    for (let index = 0; index < videoContainerHeightNumTotalNeeded + 3; index++) {
+        createVideo();
+        console.log(videoContainerHeightNumTotalNeeded);
+    }
+}
+
 getNavHeight();
 
 isEnoughtVideoComp();
-
-
-function createVideoDependOnHeight() {
-    for (let index = 0; index < videoContainerHeightNumTotalNeeded + 1; index++) {
-        createVideo();
-    }
-}
