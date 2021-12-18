@@ -316,25 +316,28 @@ main :first-child .video-thumbnail>svg {
     transition-duration: 0.5s;
 }
 
-.video-thumbnail:hover::before {
-    content: "5:00";
-    display: grid;
+.video-time {
+    display: none;
+}
+
+.video-thumbnail:hover>.video-time {
+    display: grid !important;
     place-content: center;
     position: absolute;
     bottom: 1em;
     right: 1em;
     background-color: var(--yt-black);
-    padding: 0.2em 0.5em 0.05em 0.5em;
+    padding: 0.2em 0.5em;
     border-radius: 0.2em;
     font-size: 0.7em;
     color: white;
     transition-timing-function: var(--bounce-animation);
     transition-duration: 1s;
-    opacity: 0.8;
+    opacity: 0.9;
     box-shadow: 0 0 0.1em 0.1em var(--yt-black);
 }
 
-.video-thumbnail>* {
+.video-thumbnail>svg {
     height: 30%;
     opacity: 1;
     filter: drop-shadow(0 1em 2em var(--yt-black));

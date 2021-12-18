@@ -65,10 +65,8 @@ function createVideo() {
     videoComponent.querySelector(".video-title").textContent = "titolo Video " + numeroVideo;
     videoComponent.querySelector(".video-name-channel").textContent = "Canale Youtube " + numeroVideo;
     videoComponent.querySelector(".video-views").textContent = randomNumber + " visualizzazioni";
+    videoComponent.querySelector(".video-time").textContent = randomTime;
 
-
-
-    document.querySelector("style").innerHTML += ".video-thumbnail:hover::before { content: '" + randomTime + "';}";
     randomColor();
     mainContainer.appendChild(videoComponent);
 }
