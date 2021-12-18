@@ -1,10 +1,19 @@
-let categoryContainer = document.querySelector("#nav-categorie");
 let input = document.querySelector("#cerca-nav-yt");
 let button = document.querySelector("#cerca-btn");
+
+let categoryContainer = document.querySelector("#nav-categorie");
 let categoryDiv = document.querySelector(".category-div");
-let videoContainer = document.querySelector(".video-container");
+
 let mainContainer = document.querySelector("main");
+
+let videoContainer = document.querySelector(".video-container");
+let videoContainerHeight = videoContainer.offsetHeight;
+
+let mainContainerHeight = mainContainer.scrollHeight;
+let mainContainerWidth = mainContainer.offsetWidth;
+
 let numeroVideo = 0;
+let videoContainerHeightNumTotalNeeded = Math.round(mainContainerHeight / videoContainerHeight) - 1;
 
 function createCategory(category) {
     let newDiv = document.createElement("div");
@@ -55,6 +64,7 @@ window.addEventListener("scroll", function() {
     if (scrollPercentage > 95) {
         createVideo();
     }
+    isEnoughtVideoComp();
 });
 
 
@@ -66,12 +76,14 @@ function randomColor() {
 }
 
 function isEnoughtVideoComp() {
-    let videoContainerHeight = document.querySelector(".video-container").offsetHeight;
-    let mainContainerHeight = document.querySelector("main").scrollHeight;
-    /* let videoContainerHeightPercentage = mainContainerHeight / videoContainerHeight; */
-    console.log("MAIN: " + mainContainerHeight + "\n VIDEO: " + videoContainerHeight);
+    if (mainContainerWidth > 1100) {
+        console.log("maggiore di 1100");
+    } else if (mainContainerWidth > 850 && mainContainerWidth < 1100) {
+        console.log("tra 850 e 1100");
+    } else if (mainContainerWidth > 550 && mainContainerWidth < 850) {
+        console.log("tra 550 e 850");
+    }
+    console.log("MAIN: " + mainContainerHeight + "\nVIDEO: " + videoContainerHeight + "\nDIVISO: " + videoContainerHeightNumTotalNeeded);
 }
-
-isEnoughtVideoComp();
 
 getNavHeight();
