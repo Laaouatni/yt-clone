@@ -7,11 +7,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Youtube Clone</title>
     <meta name="og:title" content="Youtube Clone using Html CSS and JavaScript" />
+    <meta name="description" content="Youtube Clone created using HTML and CSS and JavaScript, from laaouatni anas">
+    <meta name="og:description" content="Youtube Clone created using HTML and CSS and JavaScript, from laaouatni anas">
     <link rel="stylesheet" href="./style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <script src="./script.js" defer></script>
+    <link rel="shortcut icon" href="https://www.youtube.com/yts/img/favicon-vfl8qSV2F.ico" type="image/x-icon">
+    <link rel="icon" href="https://www.youtube.com/yts/img/favicon_32-vflOogEID.png" sizes="32x32">
+    <link rel="icon" href="https://www.youtube.com/yts/img/favicon_48-vflVjB_Qk.png" sizes="48x48">
+    <link rel="icon" href="https://www.youtube.com/yts/img/favicon_96-vflW9Ec0w.png" sizes="96x96">
+    <link rel="icon" href="https://www.youtube.com/yts/img/favicon_144-vfliLAfaB.png" sizes="144x144">
+    <meta property="og:image" content="https://lh3.googleusercontent.com/3zkP2SYe7yYoKKe47bsNe44yTgb4Ukh__rBbwXwgkjNRe4PykGG409ozBxzxkrubV7zHKjfxq6y9ShogWtMBMPyB3jiNps91LoNH8A=s500">
 </head>
 
 <body>
@@ -19,7 +27,6 @@
         <div id="top-nav" class="grid-centered">
             <div id="nav-content" class="grid-centered">
                 <div class="little-gap">
-                    <!-- icona menu div -->
                     <div id="menu-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" preserveaspectratio="xMidYMid meet" focusable="false" class="style-scope yt-icon"><g class="style-scope yt-icon"><path d="M21,6H3V5h18V6z M21,11H3v1h18V11z M21,17H3v1h18V17z" class="style-scope yt-icon"></path></g></svg>
                     </div>
@@ -32,7 +39,10 @@
                 <div id="cerca-container">
                     <div id="cerca-div"><input type="search" name="" id="cerca-nav-yt" placeholder="Cerca"></div>
                     <!-- cerca buttone youtube -->
-                    <div id="cerca-btn"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" preserveaspectratio="xMidYMid meet" focusable="false" class="style-scope yt-icon"><g class="style-scope yt-icon"><path d="M20.87,20.17l-5.59-5.59C16.35,13.35,17,11.75,17,10c0-3.87-3.13-7-7-7s-7,3.13-7,7s3.13,7,7,7c1.75,0,3.35-0.65,4.58-1.71 l5.59,5.59L20.87,20.17z M10,16c-3.31,0-6-2.69-6-6s2.69-6,6-6s6,2.69,6,6S13.31,16,10,16z" class="style-scope yt-icon"></path></g></svg></div>
+                    <div id="cerca-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" preserveaspectratio="xMidYMid meet" focusable="false" class="style-scope yt-icon"><g class="style-scope yt-icon"><path d="M20.87,20.17l-5.59-5.59C16.35,13.35,17,11.75,17,10c0-3.87-3.13-7-7-7s-7,3.13-7,7s3.13,7,7,7c1.75,0,3.35-0.65,4.58-1.71 l5.59,5.59L20.87,20.17z M10,16c-3.31,0-6-2.69-6-6s2.69-6,6-6s6,2.69,6,6S13.31,16,10,16z" class="style-scope yt-icon"></path></g></svg>
+                        <div class="loading"></div>
+                    </div>
                     <!-- microfono buttone youtube -->
                     <div id="microfono-btn"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" preserveaspectratio="xMidYMid meet" focusable="false" class="style-scope yt-icon"><g class="style-scope yt-icon"><path d="M12 3C10.34 3 9 4.37 9 6.07V11.93C9 13.63 10.34 15 12 15C13.66 15 15 13.63 15 11.93V6.07C15 4.37 13.66 3 12 3ZM18.5 12H17.5C17.5 15.03 15.03 17.5 12 17.5C8.97 17.5 6.5 15.03 6.5 12H5.5C5.5 15.24 7.89 17.93 11 18.41V21H13V18.41C16.11 17.93 18.5 15.24 18.5 12Z" class="style-scope yt-icon"></path></g></svg></div>
                 </div>
@@ -56,14 +66,16 @@
     </nav>
     <main>
         <div class="video-container">
-            <div class="video-thumbnail"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 68 48"><path class="ytp-large-play-button-bg" d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z" fill="#f00"></path><path d="M 45,24 27,14 27,34" fill="#fff"></path></svg></div>
+            <div class="video-thumbnail"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 68 48"><path class="ytp-large-play-button-bg" d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z" fill="#f00"></path><path d="M 45,24 27,14 27,34" fill="#fff"></path></svg>
+                <div class="video-time">5:00</div>
+            </div>
             <div class="grid-video-details">
                 <div class="video-creator-logo"><img src="./images/laaouatni-icon.jpg" alt="laaouatni icon"></div>
                 <div>
-                    <div class="video-title">titolo video</div>
+                    <div class="video-title">my First Video</div>
                     <div class="video-info">
-                        <div class="video-name-channel">nome canale</div>
-                        <div class="video-views">50 visualizzazioni</div>
+                        <div class="video-name-channel">Laaouatni.</div>
+                        <div class="video-views">∞ visualizzazioni</div>
                     </div>
                 </div>
             </div>

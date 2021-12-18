@@ -1,10 +1,20 @@
+let CercaInput = document.querySelector("#cerca-nav-yt");
+let CercaBtn = document.querySelector("#cerca-btn");
+
 let categoryContainer = document.querySelector("#nav-categorie");
-let input = document.querySelector("#cerca-nav-yt");
-let button = document.querySelector("#cerca-btn");
 let categoryDiv = document.querySelector(".category-div");
-let videoContainer = document.querySelector(".video-container");
+
 let mainContainer = document.querySelector("main");
+
+let videoContainer = document.querySelector(".video-container");
+let videoContainerHeight = videoContainer.offsetHeight;
+
+let mainContainerHeight = mainContainer.scrollHeight;
+let mainContainerWidth = mainContainer.offsetWidth;
+
 let numeroVideo = 0;
+let videoContainerHeightNumTotalNeeded = Math.round(mainContainerHeight / videoContainerHeight);
+let trendingStyleCSS = ".trending-video:after, .trending-video:before {content: ' 🔥 '; text-shadow: 0 0 1em red;}";
 
 function createCategory(category) {
     let newDiv = document.createElement("div");
@@ -13,54 +23,59 @@ function createCategory(category) {
     newDiv.classList.add("category-div");
 }
 
-button.addEventListener("click", function() {
-    if (input.value != "") {
-        createCategory(input.value);
-        input.value = "";
+CercaBtn.addEventListener("click", function() {
+    if (CercaInput.value != "") {
+        createCategory(CercaInput.value);
+        CercaInput.value = "";
     } else {
         createCategory("prova a inserire qualcosa nella ricerca :)");
-        input.value = "";
+        CercaInput.value = "";
     }
 });
 
 function getNavHeight() {
     let navHeight = document.querySelector("nav").offsetHeight;
-    console.log(navHeight);
     document.documentElement.style.setProperty("--navAllHeight", navHeight + "px");
 }
 
-getNavHeight();
-
-
-function createVideo( /* titolo, nomeCanale, numeroViews */ ) {
+function createVideo() {
     // copia il codice html
     let videoComponent = videoContainer.cloneNode(true);
 
     let randomNumber = Math.floor(Math.random() * 1000);
     numeroVideo += 1;
 
-    videoComponent.querySelector(".video-title").textContent = "titolo Video " + numeroVideo;
-    videoComponent.querySelector(".video-name-channel").textContent = "Canale Youtube " + numeroVideo;
-    videoComponent.querySelector(".video-views").textContent = randomNumber + " visualizzazioni";
+    let randomMin = Math.round(Math.random() * 10);
+    let randomSecond = Math.round(Math.random() * 60);
+    let randomTime = "";
+
     if (randomNumber > 900) {
         videoComponent.querySelector(".video-views").classList.add("trending-video");
-        document.querySelector("style").innerHTML = ".trending-video:after, .trending-video:before {content: ' 🔥 '; text-shadow: 0 0 1em red;}";
+        document.querySelector("style").innerHTML = trendingStyleCSS;
     } else {
         videoComponent.querySelector(".video-views").classList.remove("trending-video");
     }
+
+    if (randomSecond < 10) {
+        randomTime = randomMin + ":" + "0" + randomSecond;
+    } else if (randomSecond > 60) {
+        randomTime = "ERROR";
+    } else { randomTime = randomMin + ":" + randomSecond; }
+
+    videoComponent.querySelector(".video-title").textContent = "titolo Video " + numeroVideo;
+    videoComponent.querySelector(".video-name-channel").textContent = "Canale Youtube " + numeroVideo;
+    videoComponent.querySelector(".video-views").textContent = randomNumber + " visualizzazioni";
+    videoComponent.querySelector(".video-time").textContent = randomTime;
+
     randomColor();
     mainContainer.appendChild(videoComponent);
-}
-for (let index = 0; index < 20; index++) {
-    createVideo();
 }
 
 window.addEventListener("scroll", function() {
     let scrollPercentage = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
-    console.log(scrollPercentage);
-    if (scrollPercentage > 90) {
+    if (scrollPercentage > 85) {
         createVideo();
-    } else if (scrollPercentage > 70 && scrollPercentage < 90) {}
+    }
 });
 
 
@@ -70,3 +85,34 @@ function randomColor() {
     let b = Math.floor(Math.random() * 256);
     document.querySelector(".video-thumbnail").style.background = "rgb(" + r + ", " + g + ", " + b + ")";
 }
+
+function isEnoughtVideoComp() {
+    let bodyWidth = document.querySelector("body").offsetWidth;
+    if (bodyWidth > 1100) {
+        for (let index = 0; index < 4; index++) {
+            createVideoDependOnHeight();
+        }
+    } else if (bodyWidth < 1100 && bodyWidth > 850) {
+        for (let index = 0; index < 3; index++) {
+            createVideoDependOnHeight();
+        }
+    } else if (bodyWidth < 850 && bodyWidth > 550) {
+        for (let index = 0; index < 2; index++) {
+            createVideoDependOnHeight();
+        }
+    } else if (bodyWidth < 550) {
+        createVideoDependOnHeight();
+    }
+    console.log("MAIN: " + mainContainerHeight + "\nVIDEO: " + videoContainerHeight + "\nDIVISO: " + videoContainerHeightNumTotalNeeded);
+}
+
+function createVideoDependOnHeight() {
+    for (let index = 0; index < videoContainerHeightNumTotalNeeded; index++) {
+        createVideo();
+        console.log(videoContainerHeightNumTotalNeeded);
+    }
+}
+
+getNavHeight();
+
+isEnoughtVideoComp();

@@ -6,14 +6,16 @@
     --yt-grey: #323232;
     --yt-light-grey: #373737;
     --yt-height-nav-content: calc(var(--nav-height) - 1em);
-    --nav-width: calc(100vw - 2em);
-    /*ricordati che prima era a 5em */
+    --nav-width: calc(100vw - var(--lateral-nav-width));
+    /*ricordati che prima era a 5em (molto prima) e 2em (prima)*/
     --bounce-animation: cubic-bezier(.23, .62, .35, 1.3);
     --yt-dark-blue: #065fd4;
     --yt-light-blue: #3ea6ff;
     --button-height: 33.33px;
     --glassmophic-white: rgba(255, 255, 255, 0.1);
     --light-green: #00ff6c;
+    --lateral-nav-width: 5em;
+    --yt-light-red: #FF0026;
 }
 
 html {
@@ -37,6 +39,8 @@ nav {
     background-color: var(--light-black);
     overflow: hidden;
     width: 100%;
+    place-content: center/* end */
+    ;
 }
 
 .grid-centered {
@@ -107,6 +111,23 @@ nav {
     display: grid;
     place-items: center;
     border-radius: 0 0.1em 0.1em 0;
+}
+
+#cerca-btn:active>.loading {
+    left: 0 !important;
+    transition-duration: 0.2s;
+}
+
+@keyframes loading {
+    from {
+        left: 120%;
+    }
+    70% {
+        left: 0;
+    }
+    to {
+        left: 120%;
+    }
 }
 
 #menu-icon,
@@ -231,6 +252,7 @@ main {
     grid-template-columns: repeat(4, 1fr);
     gap: 1em;
     padding: 1em;
+    transition-duration: 0.5s;
 }
 
 .video-container {
@@ -238,12 +260,33 @@ main {
     animation: videoIn 1s ease-in-out;
     background-color: rgba(255, 255, 255, 0.007);
     border-radius: 0.5em;
+    transition-timing-function: var(--bounce-animation);
+    transition-duration: 0.5s;
+}
+
+.video-container:hover {
+    transition-timing-function: var(--bounce-animation);
+    transition-duration: 1s;
+    transform: translateY(-1em) rotate(1deg);
+    box-shadow: 0 1em 2em var(--yt-black);
+}
+
+main :first-child .grid-video-details div .video-info>.video-views::first-letter {
+    font-weight: bolder;
+}
+
+main :first-child .video-thumbnail {
+    background: linear-gradient(145deg, rgb(255, 255, 255), rgb(32, 92, 255))!important;
+}
+
+main :first-child .video-thumbnail>svg {
+    filter: drop-shadow(0 1em 2em white);
 }
 
 @keyframes videoIn {
     from {
         opacity: 0;
-        transform: translateY(10em);
+        transform: translateY(100%);
     }
     to {
         transform: rotate(0) translateY(0);
@@ -257,9 +300,44 @@ main {
     border-radius: 0.5em;
     display: grid;
     place-items: center;
+    transition-timing-function: var(--bounce-animation);
+    transition-duration: 0.5s;
+    position: relative;
 }
 
-.video-thumbnail>* {
+.video-thumbnail:hover>svg {
+    transform: scale(1.5) rotate(-360deg);
+    transition-timing-function: var(--bounce-animation);
+    transition-duration: 1s;
+}
+
+.video-thumbnail>svg {
+    transition-timing-function: var(--bounce-animation);
+    transition-duration: 0.5s;
+}
+
+.video-time {
+    display: none;
+}
+
+.video-thumbnail:hover>.video-time {
+    display: grid !important;
+    place-content: center;
+    position: absolute;
+    bottom: 1em;
+    right: 1em;
+    background-color: var(--yt-black);
+    padding: 0.2em 0.5em;
+    border-radius: 0.2em;
+    font-size: 0.7em;
+    color: white;
+    transition-timing-function: var(--bounce-animation);
+    transition-duration: 1s;
+    opacity: 0.9;
+    box-shadow: 0 0 0.1em 0.1em var(--yt-black);
+}
+
+.video-thumbnail>svg {
     height: 30%;
     opacity: 1;
     filter: drop-shadow(0 1em 2em var(--yt-black));
@@ -306,6 +384,25 @@ main {
     text-shadow: 0 0 2em var(--light-green);
 }
 
+.loading {
+    z-index: 10;
+    width: 100vw;
+    height: 0.2em;
+    background-color: var(--yt-light-red);
+    position: fixed;
+    top: 0;
+    left: 120%;
+    transition-duration: 0;
+    box-shadow: 0 0 0.5em var(--yt-light-red);
+    transition-duration: 1s;
+}
+
+@media (min-width: 1800px) {
+    main {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
 @media (max-width: 1100px) {
     main {
         grid-template-columns: repeat(3, 1fr);
@@ -325,6 +422,12 @@ main {
     #cerca-btn {
         border-radius: var(--button-height);
         transition-duration: 0.5s;
+    }
+}
+
+@media (max-width: 550px) {
+    main {
+        grid-template-columns: 1fr;
     }
 }
 
