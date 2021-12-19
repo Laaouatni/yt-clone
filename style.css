@@ -439,6 +439,16 @@ main :first-child .video-thumbnail>svg {
     left: 0;
     height: 100vh;
     width: var(--lateral-nav-width);
+    display: flex;
+    flex-direction: column;
+}
+
+.lateral-navbar svg {
+    height: 2em;
+    width: 2em;
+    fill: white;
+    filter: drop-shadow(0 0 1em var(--yt-black));
+    transition-duration: 0.5s;
 }
 
 main,
