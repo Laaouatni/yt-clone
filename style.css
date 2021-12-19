@@ -6,7 +6,7 @@
     --yt-grey: #323232;
     --yt-light-grey: #373737;
     --yt-height-nav-content: calc(var(--nav-height) - 1em);
-    --nav-width: calc(100vw - var(--lateral-nav-width));
+    --nav-width: calc(100vw - var(--lateral-nav-width) - 3em);
     /*ricordati che prima era a 5em (molto prima) e 2em (prima)*/
     --bounce-animation: cubic-bezier(.23, .62, .35, 1.3);
     --yt-dark-blue: #065fd4;
@@ -14,7 +14,7 @@
     --button-height: 33.33px;
     --glassmophic-white: rgba(255, 255, 255, 0.1);
     --light-green: #00ff6c;
-    --lateral-nav-width: 5em;
+    --lateral-nav-width: 4em;
     --yt-light-red: #FF0026;
 }
 
@@ -429,6 +429,20 @@ main :first-child .video-thumbnail>svg {
     transition-duration: 0;
     box-shadow: 0 0 0.5em var(--yt-light-red);
     transition-duration: 1s;
+}
+
+.lateral-navbar {
+    background-color: var(--light-black);
+    z-index: 2;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: var(--lateral-nav-width);
+}
+
+main {
+    margin-left: var(--lateral-nav-width);
 }
 
 @media (min-width: 1800px) {
