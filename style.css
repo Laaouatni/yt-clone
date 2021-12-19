@@ -441,7 +441,8 @@ main :first-child .video-thumbnail>svg {
     width: var(--lateral-nav-width);
 }
 
-main {
+main,
+#nav-categorie {
     margin-left: var(--lateral-nav-width);
 }
 
