@@ -14,7 +14,7 @@
     --button-height: 33.33px;
     --glassmophic-white: rgba(255, 255, 255, 0.1);
     --light-green: #00ff6c;
-    --lateral-nav-width: 4em;
+    --lateral-nav-width: 5em;
     --yt-light-red: #FF0026;
 }
 
@@ -441,13 +441,45 @@ main :first-child .video-thumbnail>svg {
     width: var(--lateral-nav-width);
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
-.lateral-navbar svg {
-    height: 2em;
+.mini-lateral-nav {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition-duration: 0.5s;
+}
+
+.btn-mini-nav {
+    width: 100%;
+    aspect-ratio: 1;
+    display: grid;
+    place-content: center;
+    justify-items: center;
+    gap: 0.3em;
+    transition-duration: 0.1s;
+    position: relative;
+    top: var(--navAllHeight);
+}
+
+.btn-mini-nav svg {
     width: 2em;
     fill: white;
     filter: drop-shadow(0 0 1em var(--yt-black));
+    transition-duration: 0.5s;
+}
+
+.btn-mini-nav span {
+    font-size: 0.6em;
+    color: white;
+}
+
+.btn-mini-nav:hover {
+    background-color: var(--glassmophic-white);
     transition-duration: 0.5s;
 }
 
