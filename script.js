@@ -73,7 +73,7 @@ function createVideo() {
 
 window.addEventListener("scroll", function() {
     let scrollPercentage = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
-    if (scrollPercentage > 85) {
+    if (scrollPercentage > 70) {
         createVideo();
     }
 });
@@ -88,7 +88,12 @@ function randomColor() {
 
 function isEnoughtVideoComp() {
     let bodyWidth = document.querySelector("body").offsetWidth;
-    if (bodyWidth > 1100) {
+    if (bodyWidth > 1700) {
+        for (let index = 0; index < 5; index++) {
+            createVideoDependOnHeight();
+        }
+    } else
+    if (bodyWidth > 1100 && bodywidth < 1700) {
         for (let index = 0; index < 4; index++) {
             createVideoDependOnHeight();
         }
@@ -109,7 +114,6 @@ function isEnoughtVideoComp() {
 function createVideoDependOnHeight() {
     for (let index = 0; index < videoContainerHeightNumTotalNeeded; index++) {
         createVideo();
-        console.log(videoContainerHeightNumTotalNeeded);
     }
 }
 
