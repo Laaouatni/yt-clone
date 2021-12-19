@@ -92,8 +92,7 @@ function isEnoughtVideoComp() {
         for (let index = 0; index < 5; index++) {
             createVideoDependOnHeight();
         }
-    } else
-    if (bodyWidth > 1100 && bodywidth < 1700) {
+    } else if (bodyWidth > 1100 && bodyWidth < 1700) {
         for (let index = 0; index < 4; index++) {
             createVideoDependOnHeight();
         }
@@ -108,7 +107,6 @@ function isEnoughtVideoComp() {
     } else if (bodyWidth < 550) {
         createVideoDependOnHeight();
     }
-    console.log("MAIN: " + mainContainerHeight + "\nVIDEO: " + videoContainerHeight + "\nDIVISO: " + videoContainerHeightNumTotalNeeded);
 }
 
 function createVideoDependOnHeight() {

@@ -303,6 +303,7 @@ main :first-child .video-thumbnail>svg {
     transition-timing-function: var(--bounce-animation);
     transition-duration: 0.5s;
     position: relative;
+    overflow: hidden;
 }
 
 .video-thumbnail:hover>svg {
@@ -334,7 +335,18 @@ main :first-child .video-thumbnail>svg {
     transition-timing-function: var(--bounce-animation);
     transition-duration: 1s;
     opacity: 0.9;
-    box-shadow: 0 0 0.1em 0.1em var(--yt-black);
+    animation: fade-in 1s var(--bounce-animation);
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .video-thumbnail>svg {
