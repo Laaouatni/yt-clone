@@ -358,6 +358,14 @@ main :first-child .video-thumbnail>svg {
 .video-creator-logo {
     display: grid;
     place-self: center;
+    transition-duration: 0.5s;
+}
+
+.video-creator-logo:hover {
+    transition-duration: 1s;
+    transform: scale(1.1) rotate(10deg);
+    filter: drop-shadow(0 0 1em var(--yt-dark-blue));
+    transition-timing-function: var(--bounce-animation);
 }
 
 .video-creator-logo>img {
@@ -383,6 +391,15 @@ main :first-child .video-thumbnail>svg {
 .video-info {
     font-size: 0.7em;
     opacity: 0.7;
+}
+
+.video-info:hover {
+    opacity: 1 !important;
+}
+
+.video-name-channel:hover {
+    opacity: 1 !important;
+    text-shadow: 0 0 3.em white;
 }
 
 .video-views {
