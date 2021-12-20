@@ -469,8 +469,7 @@ main :first-child .video-thumbnail>svg {
     justify-items: center;
     gap: 0.3em;
     transition-duration: 0.1s;
-    position: relative;
-    top: var(--navAllHeight);
+    transform: translatey(calc(var(--navAllHeight) - var(--nav-height)));
 }
 
 .btn-mini-nav svg {
@@ -485,7 +484,7 @@ main :first-child .video-thumbnail>svg {
     color: white;
 }
 
-:hover:is(.btn-mini-nav, #menu-icon) {
+.btn-mini-nav:hover {
     background-color: var(--glassmophic-white);
     transition-duration: 0.5s;
 }
