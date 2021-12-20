@@ -139,7 +139,8 @@ nav {
     }
 }
 
-#menu-icon,
+#menu-icon {}
+
 #cerca-container svg,
 #function-nav svg {
     fill: white;
@@ -484,7 +485,7 @@ main :first-child .video-thumbnail>svg {
     color: white;
 }
 
-.btn-mini-nav:hover {
+:hover:is(.btn-mini-nav, #menu-icon) {
     background-color: var(--glassmophic-white);
     transition-duration: 0.5s;
 }
@@ -492,6 +493,21 @@ main :first-child .video-thumbnail>svg {
 main,
 #nav-categorie {
     margin-left: var(--lateral-nav-width);
+}
+
+#menu-icon {
+    aspect-ratio: 1;
+    height: var(--nav-height);
+    cursor: pointer;
+    display: grid;
+    place-content: center;
+}
+
+#menu-icon svg {
+    width: 1.5em;
+    fill: white;
+    filter: drop-shadow(0 0 1em var(--yt-black));
+    transition-duration: 0.5s;
 }
 
 @media (min-width: 1800px) {
@@ -547,8 +563,9 @@ main,
     }
 }
 
-@media (max-width: 300px) {
+
+/* @media (max-width: 300px) {
     #menu-icon {
         display: none !important;
     }
-}
+} */
