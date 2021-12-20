@@ -38,7 +38,6 @@ nav {
     position: fixed;
     top: 0;
     z-index: 1;
-    opacity: 0.95;
 }
 
 #top-nav {
@@ -49,6 +48,7 @@ nav {
     display: flex;
     justify-content: flex-end;
     align-content: center;
+    transition-duration: 0.2s;
 }
 
 .grid-centered {
@@ -223,6 +223,7 @@ nav {
     align-items: center;
     padding-left: 1em !important;
     overflow-x: auto;
+    transition-duration: 0.2s;
 }
 
 #nav-categorie::-webkit-scrollbar {

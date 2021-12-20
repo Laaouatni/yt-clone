@@ -12,6 +12,9 @@ let videoContainerHeight = videoContainer.offsetHeight;
 let mainContainerHeight = mainContainer.scrollHeight;
 let mainContainerWidth = mainContainer.offsetWidth;
 
+let navTop = document.querySelector("#top-nav");
+let navBottom = document.querySelector("#nav-categorie");
+
 let numeroVideo = 0;
 let videoContainerHeightNumTotalNeeded = Math.round(mainContainerHeight / videoContainerHeight);
 let trendingStyleCSS = ".trending-video:after, .trending-video:before {content: ' 🔥 '; text-shadow: 0 0 1em red;}";
@@ -69,13 +72,41 @@ function createVideo() {
 
     randomColor();
     mainContainer.appendChild(videoComponent);
+    if (window.onscroll) { categoryDiv.textContent = "sta scorrendo"; }
 }
 
 window.addEventListener("scroll", function() {
     let scrollPercentage = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
+
+    if (scrollPercentage != 0) {
+        navTop.style.opacity = "0.8";
+        navBottom.style.opacity = "0.8";
+    } else {
+        navTop.style.opacity = "1";
+        navBottom.style.opacity = "1";
+    }
     if (scrollPercentage > 70) {
         createVideo();
     }
+});
+
+function createScrollStopListener(element, callback, timeout) {
+    var handle = null;
+    var onScroll = function() {
+        if (handle) {
+            clearTimeout(handle);
+        }
+        handle = setTimeout(callback, timeout || 200); // default 200 ms
+    };
+    element.addEventListener('scroll', onScroll);
+    return function() {
+        element.removeEventListener('scroll', onScroll);
+    };
+}
+
+createScrollStopListener(window, function() {
+    navTop.style.opacity = "1";
+    navBottom.style.opacity = "1";
 });
 
 
