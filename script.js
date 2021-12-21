@@ -8,6 +8,7 @@ let mainContainer = document.querySelector("main");
 
 let videoContainer = document.querySelector(".video-container");
 let videoContainerHeight = videoContainer.offsetHeight;
+let allVideoContainer = document.querySelectorAll(".video-container");
 
 let mainContainerHeight = mainContainer.scrollHeight;
 let mainContainerWidth = mainContainer.offsetWidth;
@@ -161,11 +162,13 @@ isEnoughtVideoComp();
     }
 }) */
 
-for (let index = 0; index < videoContainer.length; index++) {
-    videoContainer[index].addEventListener("click", function() {
-        let thisVideoContainer = videoContainer[index];
-        thisVideoContainer.style.height = 50 + "vh";
-        thisVideoContainer.style.position = "fixed";
-        console.log("clicked video N " + index)
+for (let index = 0; index < allVideoContainer.length; index++) {
+    allVideoContainer[index].addEventListener("click", function() {
+        /*         let thisVideoContainer = allVideoContainer[index];
+                thisVideoContainer.style.position = "fixed";
+                thisVideoContainer.style.top = "0";
+                thisVideoContainer.style.left = "0";
+                thisVideoContainer.style.zIndex = "100"; */
+        alert("clicked video N " + index)
     })
 }
