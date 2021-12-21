@@ -48,7 +48,7 @@ nav {
     display: flex;
     justify-content: flex-end;
     align-content: center;
-    transition-duration: 0.2s;
+    transition-duration: 0.5s;
 }
 
 .grid-centered {
@@ -224,7 +224,7 @@ nav {
     align-items: center;
     padding-left: 1em !important;
     overflow-x: auto;
-    transition-duration: 0.2s;
+    transition-duration: 0.5s;
 }
 
 #nav-categorie::-webkit-scrollbar {

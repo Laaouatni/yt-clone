@@ -79,8 +79,8 @@ window.addEventListener("scroll", function() {
     let scrollPercentage = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
 
     if (scrollPercentage != 0) {
-        navTop.style.opacity = "0.8";
-        navBottom.style.opacity = "0.8";
+        navTop.style.opacity = "0.95";
+        navBottom.style.opacity = "0.95";
     } else {
         navTop.style.opacity = "1";
         navBottom.style.opacity = "1";
@@ -90,7 +90,7 @@ window.addEventListener("scroll", function() {
     }
 });
 
-function createScrollStopListener(element, callback, timeout) {
+/* function createScrollStopListener(element, callback, timeout) {
     var handle = null;
     var onScroll = function() {
         if (handle) {
@@ -107,7 +107,7 @@ function createScrollStopListener(element, callback, timeout) {
 createScrollStopListener(window, function() {
     navTop.style.opacity = "1";
     navBottom.style.opacity = "1";
-});
+}); */
 
 
 function randomColor() {
@@ -149,3 +149,14 @@ function createVideoDependOnHeight() {
 getNavHeight();
 
 isEnoughtVideoComp();
+
+/* videoContainer.addEventListener("mousedown", function() {
+    document.onmousemove = function(e) {
+        VideoX = e.clientX;
+        VideoY = e.clientY;
+        videoContainer.style.position = "relative";
+        videoContainer.style.bottom = VideoY + "px";
+        videoContainer.style.transitionDuration = 0;
+        categoryDiv.textContent = VideoY;
+    }
+}) */
