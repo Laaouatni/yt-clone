@@ -160,3 +160,12 @@ isEnoughtVideoComp();
         categoryDiv.textContent = VideoY;
     }
 }) */
+
+for (let index = 0; index < videoContainer.length; index++) {
+    videoContainer[index].addEventListener("click", function() {
+        let thisVideoContainer = videoContainer[index];
+        thisVideoContainer.style.height = 50 + "vh";
+        thisVideoContainer.style.position = "fixed";
+        console.log("clicked video N " + index)
+    })
+}
