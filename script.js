@@ -8,9 +8,14 @@ let mainContainer = document.querySelector("main");
 
 let videoContainer = document.querySelector(".video-container");
 let videoContainerHeight = videoContainer.offsetHeight;
+let allVideoContainer = document.querySelectorAll(".video-container");
 
 let mainContainerHeight = mainContainer.scrollHeight;
 let mainContainerWidth = mainContainer.offsetWidth;
+
+let nav = document.querySelector("nav");
+let navTop = document.querySelector("#top-nav");
+let navBottom = document.querySelector("#nav-categorie");
 
 let numeroVideo = 0;
 let videoContainerHeightNumTotalNeeded = Math.round(mainContainerHeight / videoContainerHeight);
@@ -58,8 +63,8 @@ function createVideo() {
 
     if (randomSecond < 10) {
         randomTime = randomMin + ":" + "0" + randomSecond;
-    } else if (randomSecond > 60) {
-        randomTime = "ERROR";
+    } else if (randomSecond >= 60) {
+        randomTime = randomMin + ":" + "59";
     } else { randomTime = randomMin + ":" + randomSecond; }
 
     videoComponent.querySelector(".video-title").textContent = "titolo Video " + numeroVideo;
@@ -69,14 +74,42 @@ function createVideo() {
 
     randomColor();
     mainContainer.appendChild(videoComponent);
+    if (window.onscroll) { categoryDiv.textContent = "sta scorrendo"; }
 }
 
 window.addEventListener("scroll", function() {
     let scrollPercentage = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
-    if (scrollPercentage > 85) {
+
+    if (scrollPercentage != 0) {
+        navTop.style.opacity = "0.95";
+        navBottom.style.opacity = "0.95";
+    } else {
+        navTop.style.opacity = "1";
+        navBottom.style.opacity = "1";
+    }
+    if (scrollPercentage > 70) {
         createVideo();
     }
 });
+
+/* function createScrollStopListener(element, callback, timeout) {
+    var handle = null;
+    var onScroll = function() {
+        if (handle) {
+            clearTimeout(handle);
+        }
+        handle = setTimeout(callback, timeout || 200); // default 200 ms
+    };
+    element.addEventListener('scroll', onScroll);
+    return function() {
+        element.removeEventListener('scroll', onScroll);
+    };
+}
+
+createScrollStopListener(window, function() {
+    navTop.style.opacity = "1";
+    navBottom.style.opacity = "1";
+}); */
 
 
 function randomColor() {
@@ -88,7 +121,11 @@ function randomColor() {
 
 function isEnoughtVideoComp() {
     let bodyWidth = document.querySelector("body").offsetWidth;
-    if (bodyWidth > 1100) {
+    if (bodyWidth > 1700) {
+        for (let index = 0; index < 5; index++) {
+            createVideoDependOnHeight();
+        }
+    } else if (bodyWidth > 1100 && bodyWidth < 1700) {
         for (let index = 0; index < 4; index++) {
             createVideoDependOnHeight();
         }
@@ -103,16 +140,31 @@ function isEnoughtVideoComp() {
     } else if (bodyWidth < 550) {
         createVideoDependOnHeight();
     }
-    console.log("MAIN: " + mainContainerHeight + "\nVIDEO: " + videoContainerHeight + "\nDIVISO: " + videoContainerHeightNumTotalNeeded);
 }
 
 function createVideoDependOnHeight() {
     for (let index = 0; index < videoContainerHeightNumTotalNeeded; index++) {
         createVideo();
-        console.log(videoContainerHeightNumTotalNeeded);
     }
 }
 
 getNavHeight();
 
 isEnoughtVideoComp();
+
+/* videoContainer.addEventListener("mousedown", function() {
+    document.onmousemove = function(e) {
+        VideoX = e.clientX;
+        VideoY = e.clientY;
+        videoContainer.style.position = "relative";
+        videoContainer.style.bottom = VideoY + "px";
+        videoContainer.style.transitionDuration = 0;
+        categoryDiv.textContent = VideoY;
+    }
+}) */
+
+for (let index = 0; index < allVideoContainer.length; index++) {
+    allVideoContainer[index].addEventListener("click", function() {
+        console.log("clicked video N " + index);
+    })
+}
