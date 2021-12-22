@@ -13,6 +13,7 @@ let allVideoContainer = document.querySelectorAll(".video-container");
 let mainContainerHeight = mainContainer.scrollHeight;
 let mainContainerWidth = mainContainer.offsetWidth;
 
+let nav = document.querySelector("nav");
 let navTop = document.querySelector("#top-nav");
 let navBottom = document.querySelector("#nav-categorie");
 
@@ -164,11 +165,6 @@ isEnoughtVideoComp();
 
 for (let index = 0; index < allVideoContainer.length; index++) {
     allVideoContainer[index].addEventListener("click", function() {
-        /*         let thisVideoContainer = allVideoContainer[index];
-                thisVideoContainer.style.position = "fixed";
-                thisVideoContainer.style.top = "0";
-                thisVideoContainer.style.left = "0";
-                thisVideoContainer.style.zIndex = "100"; */
-        alert("clicked video N " + index)
+        console.log("clicked video N " + index);
     })
 }
