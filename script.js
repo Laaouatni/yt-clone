@@ -164,7 +164,18 @@ isEnoughtVideoComp();
 }) */
 
 mainContainer.addEventListener("click", function(e) {
-    if (e.target == videoContainer) {
-        console.log("matches");
-    } else { console.log("haha bug"); }
+    console.log(e.target);
+
+
+    var closestDiv = e.target.closest(".video-container");
+    if (closestDiv) {
+
+        var index = Array.prototype.indexOf.call(mainContainer.children, closestDiv);
+
+        var numVideoContainer = mainContainer.querySelectorAll(".video-container").length;
+        console.log("closestDiv" + numVideoContainer);
+
+        closestDiv.style.transform = "scale(1.5)";
+    }
+    console.log(closestDiv);
 });
