@@ -163,8 +163,8 @@ isEnoughtVideoComp();
     }
 }) */
 
-for (let index = 0; index < allVideoContainer.length; index++) {
-    allVideoContainer[index].addEventListener("click", function() {
-        console.log("clicked video N " + index);
-    })
-}
+mainContainer.addEventListener("click", function(e) {
+    if (e.target == videoContainer) {
+        console.log("matches");
+    } else { console.log("haha bug"); }
+});
