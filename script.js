@@ -153,7 +153,7 @@ mainContainer.addEventListener("click", function(e) {
     if (closestDiv == allVideoContainer[0]) {
         closestDiv.style = none;
         closestDiv.style.outline = "2px solid red";
-    } else if (closestDiv != allVideoContainer[1]) {
+    } else {
         closestDiv.style.zIndex = "9999";
         closestDiv.style.position = "fixed";
         closestDiv.style.top = 0;
