@@ -169,13 +169,7 @@ mainContainer.addEventListener("click", function(e) {
 
     var closestDiv = e.target.closest(".video-container");
     if (closestDiv) {
-
-        var index = Array.prototype.indexOf.call(mainContainer.children, closestDiv);
-
-        var numVideoContainer = mainContainer.querySelectorAll(".video-container").length;
-        console.log("closestDiv" + numVideoContainer);
-
-        closestDiv.style.transform = "scale(1.5)";
+        closestDiv.style.outline = "5px solid red";
     }
     console.log(closestDiv);
 });
