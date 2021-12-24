@@ -92,24 +92,6 @@ window.addEventListener("scroll", function() {
     }
 });
 
-/* function createScrollStopListener(element, callback, timeout) {
-    var handle = null;
-    var onScroll = function() {
-        if (handle) {
-            clearTimeout(handle);
-        }
-        handle = setTimeout(callback, timeout || 200); // default 200 ms
-    };
-    element.addEventListener('scroll', onScroll);
-    return function() {
-        element.removeEventListener('scroll', onScroll);
-    };
-}
-
-createScrollStopListener(window, function() {
-    navTop.style.opacity = "1";
-    navBottom.style.opacity = "1";
-}); */
 
 
 function randomColor() {
@@ -164,12 +146,18 @@ isEnoughtVideoComp();
 }) */
 
 mainContainer.addEventListener("click", function(e) {
-    console.log(e.target);
-
-
     var closestDiv = e.target.closest(".video-container");
-    if (closestDiv) {
-        closestDiv.style.outline = "5px solid red";
-    }
+    console.log(e.target);
     console.log(closestDiv);
+    /* check if clicked the first video container */
+    if (closestDiv == allVideoContainer[0]) {
+        closestDiv.style = none;
+        closestDiv.style.outline = "2px solid red";
+    } else if (closestDiv != allVideoContainer[1]) {
+        closestDiv.style.zIndex = "9999";
+        closestDiv.style.position = "fixed";
+        closestDiv.style.top = 0;
+        closestDiv.style.left = 0;
+        closestDiv.style.width = "100vw";
+    }
 });
