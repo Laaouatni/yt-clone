@@ -151,13 +151,15 @@ mainContainer.addEventListener("click", function(e) {
     console.log(closestDiv);
     /* check if clicked the first video container */
     if (closestDiv == allVideoContainer[0]) {
+        console.log("ho cliccato il primo video");
         closestDiv.style = none;
         closestDiv.style.outline = "2px solid red";
     } else {
+        console.log("ho cliccato un video diverso");
+        console.log(closestDiv);
         closestDiv.style.zIndex = "9999";
-        closestDiv.style.position = "fixed";
-        closestDiv.style.top = 0;
-        closestDiv.style.left = 0;
-        closestDiv.style.width = "100vw";
+        console.log(e.target.scrollWidth + e.target.scrollHeight);
+        closestDiv.style.transform = "translateX(" + e.target.scrollWidth + "px) translateY(" + e.target.scrollHeight + "px)";
+        /* closestDiv.style.width = "100vw"; */
     }
 });
