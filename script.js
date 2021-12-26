@@ -134,32 +134,12 @@ getNavHeight();
 
 isEnoughtVideoComp();
 
-/* videoContainer.addEventListener("mousedown", function() {
-    document.onmousemove = function(e) {
-        VideoX = e.clientX;
-        VideoY = e.clientY;
-        videoContainer.style.position = "relative";
-        videoContainer.style.bottom = VideoY + "px";
-        videoContainer.style.transitionDuration = 0;
-        categoryDiv.textContent = VideoY;
-    }
-}) */
-
 mainContainer.addEventListener("click", function(e) {
     var closestDiv = e.target.closest(".video-container");
-    console.log(e.target);
-    console.log(closestDiv);
-    /* check if clicked the first video container */
-    if (closestDiv == allVideoContainer[0]) {
-        console.log("ho cliccato il primo video");
-        closestDiv.style = none;
-        closestDiv.style.outline = "2px solid red";
+
+    if (closestDiv) {
+        console.log("hai cliccato il video");
     } else {
-        console.log("ho cliccato un video diverso");
-        console.log(closestDiv);
-        closestDiv.style.zIndex = "9999";
-        console.log(e.target.scrollWidth + " " + e.target.scrollHeight);
-        closestDiv.style.transform = "translateX(-" + e.target.scrollWidth + "px) translateY(-" + e.target.scrollWidth + "px))";
-        /* closestDiv.style.width = "100vw"; */
+        console.log("hai cliccato main");
     }
 });
