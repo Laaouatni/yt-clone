@@ -158,8 +158,8 @@ mainContainer.addEventListener("click", function(e) {
         console.log("ho cliccato un video diverso");
         console.log(closestDiv);
         closestDiv.style.zIndex = "9999";
-        console.log(e.target.scrollWidth + e.target.scrollHeight);
-        closestDiv.style.transform = "translateX(" + e.target.scrollWidth + "px) translateY(" + e.target.scrollHeight + "px)";
+        console.log(e.target.scrollWidth + " " + e.target.scrollHeight);
+        closestDiv.style.transform = "translateX(-" + e.target.scrollWidth + "px) translateY(-" + e.target.scrollWidth + "px))";
         /* closestDiv.style.width = "100vw"; */
     }
 });
