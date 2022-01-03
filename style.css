@@ -571,4 +571,10 @@ main,
 
 #video-view {
     display: none;
+    position: fixed;
+    top: var(--navAllHeight);
+    background-color: var(--yt-bg-black);
+    width: 100vw;
+    height: 100vh;
+    z-index: 5;
 }
