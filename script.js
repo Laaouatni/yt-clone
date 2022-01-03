@@ -138,8 +138,8 @@ mainContainer.addEventListener("click", function(e) {
     var closestDiv = e.target.closest(".video-container");
 
     if (closestDiv) {
-        console.log("hai cliccato il video");
+        alert("hai cliccato il video");
     } else {
-        console.log("hai cliccato main");
+        alert("hai cliccato main");
     }
 });
