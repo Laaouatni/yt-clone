@@ -568,3 +568,7 @@ main,
         display: none !important;
     }
 } */
+
+#video-view {
+    display: none;
+}
