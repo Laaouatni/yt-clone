@@ -364,7 +364,7 @@ main :first-child .video-thumbnail>svg {
 .video-thumbnail>svg {
     height: 30%;
     opacity: 1;
-    filter: drop-shadow(0 1em 2em var(--yt-black));
+    filter: drop-shadow(0 1em 2em var(--yt-light-red));
 }
 
 .video-creator-logo {
