@@ -570,11 +570,34 @@ main,
 } */
 
 #video-view {
-    display: none;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
     position: fixed;
     top: var(--navAllHeight);
     background-color: var(--yt-bg-black);
     width: 100vw;
     height: 100vh;
     z-index: 5;
+    gap: 1rem;
+}
+
+
+/* .view-first-column,
+.view-second-column {
+    display: grid;
+    place-items: start center;
+} */
+
+.view-first-column {
+    background-color: red;
+}
+
+.view-second-column {
+    background-color: blue;
+}
+
+.video-player-container {
+    background: var(--glassmophic-white);
+    width: 100%;
+    aspect-ratio: 16/9;
 }
