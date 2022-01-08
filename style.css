@@ -581,6 +581,7 @@ main,
     gap: 1rem;
     color: white;
     overflow: scroll;
+    padding: 0.7rem;
 }
 
 
@@ -627,4 +628,15 @@ main,
     display: flex;
     gap: 0.2rem;
     place-items: center;
+}
+
+.visualizzazioni {
+    opacity: 0.5;
+    font-size: 0.7rem;
+}
+
+.video-dettagli-container {
+    display: grid;
+    gap: 0.2rem;
+    padding: 1rem 0;
 }
