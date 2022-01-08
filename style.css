@@ -612,7 +612,7 @@ main,
 }
 
 .video-info-container svg {
-    height: 2rem;
+    height: 1.5rem;
     fill: white;
 }
 
@@ -620,6 +620,7 @@ main,
     display: flex;
     gap: 1rem;
     place-items: center;
+    font-size: 0.9rem;
 }
 
 .interazioni-container div {
