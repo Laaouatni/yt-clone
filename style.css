@@ -576,10 +576,11 @@ main,
     top: var(--navAllHeight);
     background-color: var(--yt-bg-black);
     width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
     z-index: 5;
     gap: 1rem;
     color: white;
+    overflow: scroll;
 }
 
 
@@ -589,13 +590,14 @@ main,
     place-items: start center;
 } */
 
-.view-first-column {
+
+/* .view-first-column {
     background-color: red;
 }
 
 .view-second-column {
     background-color: blue;
-}
+} */
 
 .video-player-container {
     background: var(--glassmophic-white);
@@ -610,6 +612,18 @@ main,
 }
 
 .video-info-container svg {
-    height: 3rem;
+    height: 2rem;
     fill: white;
+}
+
+.interazioni-container {
+    display: flex;
+    gap: 1rem;
+    place-items: center;
+}
+
+.interazioni-container div {
+    display: flex;
+    gap: 0.2rem;
+    place-items: center;
 }
