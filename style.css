@@ -604,6 +604,7 @@ main,
     background: var(--glassmophic-white);
     width: 100%;
     aspect-ratio: 16/9;
+    border-radius: 0.3rem;
 }
 
 .video-info-container {
@@ -639,4 +640,14 @@ main,
     display: grid;
     gap: 0.2rem;
     padding: 1rem 0;
+}
+
+.save-container:hover span,
+.share-container:hover span {
+    display: flex;
+}
+
+.save-container span,
+.share-container span {
+    display: none;
 }
