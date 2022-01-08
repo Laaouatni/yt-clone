@@ -573,7 +573,7 @@ main,
     display: grid;
     grid-template-columns: 3fr 1fr;
     position: fixed;
-    top: var(--navAllHeight);
+    top: var(--nav-height);
     background-color: var(--yt-bg-black);
     width: 100vw;
     min-height: 100vh;
