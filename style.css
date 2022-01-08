@@ -600,6 +600,10 @@ main,
     background-color: blue;
 } */
 
+.titolo-dettagli {
+    font-weight: bolder;
+}
+
 .video-player-container {
     background: var(--glassmophic-white);
     width: 100%;
@@ -625,6 +629,10 @@ main,
     font-size: 0.9rem;
 }
 
+.interazioni-container svg {
+    transition-duration: 5s;
+}
+
 .interazioni-container div {
     display: flex;
     gap: 0.2rem;
@@ -639,15 +647,38 @@ main,
 .video-dettagli-container {
     display: grid;
     gap: 0.2rem;
-    padding: 1rem 0;
+    padding: 1rem 0rem;
 }
 
 .save-container:hover span,
 .share-container:hover span {
     display: flex;
+    animation: SpanFadeIn 0.5s ease-in-out;
 }
 
 .save-container span,
 .share-container span {
-    display: none;
+    animation: SpanFadeOut 0.5s ease-in-out forwards;
+}
+
+@keyframes SpanFadeIn {
+    from {
+        transform: translateX(1rem);
+        opacity: 0;
+        font-size: 0;
+    }
+    to {
+        transform: translateX(0em);
+        opacity: 1;
+        font-size: 0.9rem;
+    }
+}
+
+@keyframes SpanFadeOut {
+    from {}
+    to {
+        transform: translateX(1rem);
+        opacity: 0;
+        font-size: 0;
+    }
 }
