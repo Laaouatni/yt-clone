@@ -629,10 +629,6 @@ main,
     font-size: 0.9rem;
 }
 
-.interazioni-container svg {
-    transition-duration: 5s;
-}
-
 .interazioni-container div {
     display: flex;
     gap: 0.2rem;
@@ -653,12 +649,12 @@ main,
 .save-container:hover span,
 .share-container:hover span {
     display: flex;
-    animation: SpanFadeIn 0.5s ease-in-out;
+    animation: SpanFadeIn 0.3s ease-in-out;
 }
 
 .save-container span,
 .share-container span {
-    animation: SpanFadeOut 0.5s ease-in-out forwards;
+    animation: SpanFadeOut 0.2s ease-in-out forwards;
 }
 
 @keyframes SpanFadeIn {
