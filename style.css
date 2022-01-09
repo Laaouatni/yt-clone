@@ -649,32 +649,23 @@ main,
 .save-container:hover span,
 .share-container:hover span {
     display: flex;
-    animation: SpanFadeIn 0.3s ease-in-out;
+    opacity: 1;
+    font-size: 0.9rem;
+    transition-duration: 0.5s;
 }
 
 .save-container span,
 .share-container span {
-    animation: SpanFadeOut 0.2s ease-in-out forwards;
+    opacity: 0;
+    font-size: 0;
+    transition-duration: 0.5s;
 }
 
-@keyframes SpanFadeIn {
-    from {
-        transform: translateX(1rem);
-        opacity: 0;
-        font-size: 0;
-    }
-    to {
-        transform: translateX(0em);
-        opacity: 1;
-        font-size: 0.9rem;
-    }
+.interazioni-container div:hover {
+    filter: drop-shadow(0 0 1rem white);
+    transition-duration: 0.5s;
 }
 
-@keyframes SpanFadeOut {
-    from {}
-    to {
-        transform: translateX(1rem);
-        opacity: 0;
-        font-size: 0;
-    }
+.interazioni-container div {
+    transition-duration: 0.2s;
 }
