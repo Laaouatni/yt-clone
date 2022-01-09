@@ -669,3 +669,9 @@ main,
 .interazioni-container div {
     transition-duration: 0.2s;
 }
+
+hr {
+    width: 100%;
+    color: white;
+    opacity: 0.1;
+}
