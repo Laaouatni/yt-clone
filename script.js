@@ -92,24 +92,6 @@ window.addEventListener("scroll", function() {
     }
 });
 
-/* function createScrollStopListener(element, callback, timeout) {
-    var handle = null;
-    var onScroll = function() {
-        if (handle) {
-            clearTimeout(handle);
-        }
-        handle = setTimeout(callback, timeout || 200); // default 200 ms
-    };
-    element.addEventListener('scroll', onScroll);
-    return function() {
-        element.removeEventListener('scroll', onScroll);
-    };
-}
-
-createScrollStopListener(window, function() {
-    navTop.style.opacity = "1";
-    navBottom.style.opacity = "1";
-}); */
 
 
 function randomColor() {
@@ -152,19 +134,12 @@ getNavHeight();
 
 isEnoughtVideoComp();
 
-/* videoContainer.addEventListener("mousedown", function() {
-    document.onmousemove = function(e) {
-        VideoX = e.clientX;
-        VideoY = e.clientY;
-        videoContainer.style.position = "relative";
-        videoContainer.style.bottom = VideoY + "px";
-        videoContainer.style.transitionDuration = 0;
-        categoryDiv.textContent = VideoY;
-    }
-}) */
+mainContainer.addEventListener("click", function(e) {
+    var closestDiv = e.target.closest(".video-container");
 
-for (let index = 0; index < allVideoContainer.length; index++) {
-    allVideoContainer[index].addEventListener("click", function() {
-        console.log("clicked video N " + index);
-    })
-}
+    if (closestDiv) {
+        alert("hai cliccato il video");
+    } else {
+        alert("hai cliccato main");
+    }
+});

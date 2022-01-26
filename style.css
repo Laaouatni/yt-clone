@@ -364,7 +364,7 @@ main :first-child .video-thumbnail>svg {
 .video-thumbnail>svg {
     height: 30%;
     opacity: 1;
-    filter: drop-shadow(0 1em 2em var(--yt-black));
+    filter: drop-shadow(0 1em 2em var(--yt-light-red));
 }
 
 .video-creator-logo {
@@ -568,3 +568,110 @@ main,
         display: none !important;
     }
 } */
+
+#video-view {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    position: fixed;
+    top: var(--nav-height);
+    background-color: var(--yt-bg-black);
+    width: 100vw;
+    height: 100vh;
+    z-index: 5;
+    gap: 1rem;
+    color: white;
+    overflow: scroll;
+    padding: 0.7rem;
+}
+
+
+/* .view-first-column,
+.view-second-column {
+    display: grid;
+    place-items: start center;
+} */
+
+
+/* .view-first-column {
+    background-color: red;
+}
+
+.view-second-column {
+    background-color: blue;
+} */
+
+.titolo-dettagli {
+    font-weight: bolder;
+}
+
+.video-player-container {
+    background: var(--glassmophic-white);
+    width: 100%;
+    aspect-ratio: 16/9;
+    border-radius: 0.3rem;
+}
+
+.video-info-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.video-info-container svg {
+    height: 1.5rem;
+    fill: white;
+}
+
+.interazioni-container {
+    display: flex;
+    gap: 1rem;
+    place-items: center;
+    font-size: 0.9rem;
+}
+
+.interazioni-container div {
+    display: flex;
+    gap: 0.2rem;
+    place-items: center;
+}
+
+.visualizzazioni {
+    opacity: 0.5;
+    font-size: 0.7rem;
+}
+
+.video-dettagli-container {
+    display: grid;
+    gap: 0.2rem;
+    padding: 1rem 0rem;
+}
+
+.save-container:hover span,
+.share-container:hover span {
+    display: flex;
+    opacity: 1;
+    font-size: 0.9rem;
+    transition-duration: 0.5s;
+}
+
+.save-container span,
+.share-container span {
+    opacity: 0;
+    font-size: 0;
+    transition-duration: 0.5s;
+}
+
+.interazioni-container div:hover {
+    filter: drop-shadow(0 0 1rem white);
+    transition-duration: 0.5s;
+}
+
+.interazioni-container div {
+    transition-duration: 0.2s;
+}
+
+hr {
+    width: 100%;
+    color: white;
+    opacity: 0.1;
+}
